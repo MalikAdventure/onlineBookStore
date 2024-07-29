@@ -1,0 +1,9 @@
+.search {
+	position: relative;
+	display: flex;
+	align-items: center;
+	&__button {
+		position: absolute;
+		right: 0;
+	}
+}

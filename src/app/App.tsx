@@ -1,7 +1,9 @@
+import Main from '../templates/main'
+
 function App() {
 	return (
 		<>
-			<p>hello world</p>
+			<Main />
 		</>
 	)
 }
