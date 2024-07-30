@@ -4,7 +4,7 @@ const RegularButton = ({ children, ...props }) => {
 	return (
 		<button
 			{...props}
-			className={`${classes.regularButton} ${props.className}`}>
+			className={`${classes.regularButton} ${props.className} description-text`}>
 			{children}
 		</button>
 	)

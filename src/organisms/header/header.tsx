@@ -2,7 +2,7 @@ import './header.scss'
 
 import RegularButton from '../../atoms/buttons/regularButton/regularButton'
 import RoundButton from '../../atoms/buttons/roundButton/roundButton'
-import Search from '../../molecules/search/search'
+import GlobalInput from '../../atoms/inputs/globalInput/globalInput'
 
 import logo from '../../assets/icons/logo.png'
 import english from '../../assets/icons/english.png'
@@ -16,7 +16,7 @@ const Header = () => {
 			<div className='header__container container'>
 				<img className='header__logo' src={logo} alt='logo' />
 				<RegularButton>Каталог</RegularButton>
-				<Search />
+				<GlobalInput placeholder='Введите больше двух символов' />
 				<div className='header__buttons'>
 					<RoundButton className='header__button'>
 						<img src={english} alt='english' />

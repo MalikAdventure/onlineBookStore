@@ -1,0 +1,25 @@
+.footer {
+	background-color: var(--gray);
+
+	&__box {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__item {
+		width: 30%;
+	}
+
+	&__title {
+		margin-bottom: 20px;
+	}
+
+	&__title-item {
+		display: flex;
+		align-items: center;
+		margin-bottom: 10px;
+
+		> img {
+			margin-right: 10px;
+		}
+	}
+}

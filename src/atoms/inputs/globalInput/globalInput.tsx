@@ -1,13 +1,11 @@
 import classes from './globalInput.module.scss'
 
-//! не работает
-
-const GlobalInput = ({ ...props }) => {
+const GlobalInput = ({ placeholder, ...props }) => {
 	return (
-		// <input {...props} className={`${classes.globalInput} ${props.className}`} />
 		<input
 			type='text'
-			className={`${classes.globalInput} ${props.className}`}
+			placeholder={placeholder}
+			className={`${classes.globalInput} ${props.className} description-text`}
 		/>
 	)
 }

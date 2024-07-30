@@ -1,3 +1,23 @@
+@font-face {
+	font-family: 'Roboto';
+	src: local('Roboto'), local('Roboto-Regular'),
+		url('./assets/fonts/Roboto/Roboto-Regular.woff2') format('woff2'),
+		url('./assets/fonts/Roboto/Roboto-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: local('Roboto Bold'), local('Roboto-Bold'),
+		url('./assets/fonts/Roboto/Roboto-Bold.woff2') format('woff2'),
+		url('./assets/fonts/Roboto/Roboto-Bold.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -7,9 +27,48 @@
 :root {
 	--white: #ffffff;
 	--blue: #2699fb;
+	--darkBlue: #1b3c65;
+	--black: #333333;
+	--gray: #d9d9d9;
+}
+
+html {
+	font-size: 16px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	color: #000000;
+}
+
+.title-text {
+	font-family: 'Roboto';
+	font-size: 2rem;
+	font-weight: 700;
+}
+
+.description-text {
+	font-family: 'Roboto';
+	font-size: 1.5rem;
+	font-weight: 400;
+}
+
+.link-text {
+	font-family: 'Roboto';
+	font-size: 2rem;
+	font-weight: 400;
+}
+
+.topic-text {
+	font-family: 'Roboto';
+	font-size: 2.5rem;
+	font-weight: 700;
 }
 
 .container {
 	width: 1720px;
-	margin: auto;
+	margin: 0 auto;
+}
+
+.section {
+	padding: 60px 0;
 }
