@@ -49,6 +49,10 @@ const Footer = () => {
 						</div>
 					</div>
 				</div>
+				<hr className='footer__line' />
+				<p className='link-text'>
+					Все права защищены и все такое© 2024, ТУТ МОГЛА БЫТЬ ВАША РЕКЛАМА !!!
+				</p>
 			</div>
 		</footer>
 	)

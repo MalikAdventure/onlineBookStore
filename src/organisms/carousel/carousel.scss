@@ -1,0 +1,55 @@
+.carousel {
+	background-color: var(--blue);
+
+	&__box {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 30px;
+	}
+
+	&__item {
+		margin-right: 15%;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&__item-img {
+		width: 400px;
+		height: 640px;
+	}
+
+	&__item-title {
+		margin-bottom: 30px;
+	}
+
+	&__item-text {
+		margin-bottom: 60px;
+	}
+}
+
+.slick-prev {
+	left: 0 !important;
+	z-index: 1;
+}
+
+.slick-next {
+	right: 30px !important;
+	z-index: 1;
+}
+
+.slick-prev:before,
+.slick-next:before {
+	// position: relative;
+	font-size: 50px !important;
+	// z-index: 2;
+}
+
+.slick-dots li button:before {
+	font-size: 20px !important;
+}
+
+.slick-dots {
+	position: static !important;
+}
