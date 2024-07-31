@@ -7,9 +7,9 @@ import 'slick-carousel/slick/slick-theme.css'
 import RegularButton from '../../atoms/buttons/regularButton/regularButton'
 
 import book1 from '../../assets/imgs/book-1.png'
-import book2 from '../../assets/imgs/book-2.jpg'
-import book3 from '../../assets/imgs/book-3.jpg'
-import book4 from '../../assets/imgs/book-4.jpg'
+import book2 from '../../assets/imgs/book-2.png'
+import book3 from '../../assets/imgs/book-3.png'
+import book4 from '../../assets/imgs/book-4.png'
 
 const Carousel = () => {
 	const settings = {
@@ -18,6 +18,7 @@ const Carousel = () => {
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		// autoplay: true,
+		// pauseOnHover: true,
 		autoplay: false,
 		speed: 1000,
 		autoplaySpeed: 2000,

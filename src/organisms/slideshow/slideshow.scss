@@ -1,0 +1,9 @@
+.slideshow {
+
+	&__slide {
+		> img {
+			width: 230px;
+			height: 100px;
+		}
+	}
+}
