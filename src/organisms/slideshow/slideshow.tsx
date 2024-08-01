@@ -10,6 +10,7 @@ import typescript from '../../assets/imgs/typescript.png'
 import atomic from '../../assets/imgs/atomic.png'
 import vite from '../../assets/imgs/vite.png'
 import google from '../../assets/imgs/google.png'
+import reacthookform from '../../assets/imgs/reacthookform.png'
 
 const Slideshow = () => {
 	const settings = {
@@ -23,6 +24,7 @@ const Slideshow = () => {
 		cssEase: 'linear',
 		arrows: false,
 		touchMove: false,
+		pauseOnHover: false,
 	}
 
 	return (
@@ -45,6 +47,9 @@ const Slideshow = () => {
 				</div>
 				<div className='slideshow__slide'>
 					<img src={google} alt='google' />
+				</div>
+				<div className='slideshow__slide'>
+					<img src={reacthookform} alt='reacthookform' />
 				</div>
 			</Slider>
 		</section>
