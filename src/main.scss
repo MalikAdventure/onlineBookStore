@@ -72,7 +72,20 @@ html {
 }
 
 .input-form {
-	width: 450px;
+	width: 40%;
+	height: 40px;
+	background-color: rgba(0, 0, 0, 0);
+	border: none;
+	border-bottom: 2px solid var(--black);
+	outline: none;
+
+	&::placeholder {
+		color: var(--white);
+	}
+
+	&_error {
+		border-bottom: 2px solid red;
+	}
 }
 
 .container {

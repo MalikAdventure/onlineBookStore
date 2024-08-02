@@ -9,13 +9,16 @@ import RegularButton from '../../atoms/buttons/regularButton/regularButton'
 import { IRegistration } from './registration.interface'
 
 const Registration: FC = () => {
-	const { register, handleSubmit, formState } = useForm<IRegistration>({
+	const { register, handleSubmit, formState, watch } = useForm<IRegistration>({
 		mode: 'onChange',
 	})
+
+	const password = watch('password', '')
 
 	const nameError = formState.errors.name?.message
 	const emailError = formState.errors.email?.message
 	const passwordError = formState.errors.password?.message
+	const repeatPasswordError = formState.errors.repeatPassword?.message
 
 	const onSubmit: SubmitHandler<IRegistration> = (data) => {
 		console.log(data)
@@ -29,59 +32,97 @@ const Registration: FC = () => {
 				</h1>
 				<form className='registration__form' onSubmit={handleSubmit(onSubmit)}>
 					<div className='registration__box'>
-						<input
-							className='registration__input input-form description-text'
-							type='text'
-							placeholder='Ваше имя'
-							{...register('name', {
-								required: 'Это поле обязательно к заполнению1',
-								minLength: {
-									value: 2,
-									message: 'Минимум 2 символа',
-								},
-								maxLength: {
-									value: 16,
-									message: 'Максимум 16 символов',
-								},
-							})}
-						/>
-						{nameError && <p className='error-text'>{nameError}</p>}
+						<div className='registration__item'>
+							<input
+								className={`registration__input input-form description-text ${
+									nameError ? 'input-form_error' : ''
+								}`}
+								type='text'
+								placeholder='Ваше имя'
+								{...register('name', {
+									required: 'Это поле обязательно к заполнению',
+									minLength: {
+										value: 2,
+										message: 'Минимум 2 символа',
+									},
+									maxLength: {
+										value: 16,
+										message: 'Максимум 16 символов',
+									},
+								})}
+							/>
+							{nameError && (
+								<p className='registration__text error-text'>{nameError}</p>
+							)}
+						</div>
+						<div className='registration__item'>
+							<input
+								className={`registration__input input-form description-text ${
+									emailError ? 'input-form_error' : ''
+								}`}
+								type='email'
+								placeholder='Ваша почта'
+								{...register('email', {
+									required: 'Это поле обязательно к заполнению',
+									pattern: {
+										value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+										message: 'Неправильная почта',
+									},
+								})}
+							/>
+							{emailError && (
+								<p className='registration__text error-text'>{emailError}</p>
+							)}
+						</div>
+						<div className='registration__item'>
+							<input
+								className={`registration__input input-form description-text ${
+									passwordError ? 'input-form_error' : ''
+								}`}
+								type='password'
+								placeholder='Ваш пароль'
+								{...register('password', {
+									required: 'Это поле обязательно к заполнению',
+									pattern: {
+										value:
+											/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]{8,}$/,
+										message:
+											'Пароль должен быть не меньше 8 символов и содержать как минимум одну заглавную букву, одну строчную букву, одну цифру и один специальный символ',
+									},
+								})}
+							/>
+							{passwordError && (
+								<p className='registration__text error-text'>{passwordError}</p>
+							)}
+						</div>
+						<div className='registration__item'>
+							<input
+								className={`registration__input input-form description-text ${
+									repeatPasswordError ? 'input-form_error' : ''
+								}`}
+								type='password'
+								placeholder='Повторите ваш пароль'
+								{...register('repeatPassword', {
+									required: 'Это поле обязательно к заполнению',
+									validate: (value) =>
+										value === password || 'Пароли не совпадают',
+								})}
+							/>
+							{repeatPasswordError && (
+								<p className='registration__text error-text'>
+									{repeatPasswordError}
+								</p>
+							)}
+						</div>
 					</div>
-					<div className='registration__box'>
-						<input
-							className='registration__input input-form description-text'
-							type='email'
-							placeholder='Ваша почта'
-							{...register('email', {
-								required: 'Это поле обязательно к заполнению2',
-								pattern: {
-									value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-									message: 'Неправильная почта',
-								},
-							})}
-						/>
-						{emailError && <p className='error-text'>{emailError}</p>}
+					<div className='registration__buttons'>
+						<RegularButton type='submit' className='registration__button'>
+							Зарегистрироваться
+						</RegularButton>
+						<p className='registration__link description-text'>
+							<a href='#'>У меня уже есть профиль</a>
+						</p>
 					</div>
-					<div className='registration__box'>
-						<input
-							className='registration__input input-form description-text'
-							type='password'
-							placeholder='Ваш пароль'
-							{...register('password', {
-								required: 'Это поле обязательно к заполнению3',
-								pattern: {
-									value:
-										/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]{8,}$/,
-									message:
-										'Пароль должен быть не меньше 8 символов и содержать как минимум одну заглавную букву, одну строчную букву, одну цифру и один специальный символ.',
-								},
-							})}
-						/>
-						{passwordError && <p className='error-text'>{passwordError}</p>}
-					</div>
-					<RegularButton type='submit' className='registration__button'>
-						Зарегистрироваться
-					</RegularButton>
 				</form>
 			</div>
 		</section>
