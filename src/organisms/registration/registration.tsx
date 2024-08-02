@@ -2,6 +2,8 @@ import './registration.scss'
 
 import { FC } from 'react'
 
+import { Link } from 'react-router-dom'
+
 import { SubmitHandler, useForm } from 'react-hook-form'
 
 import RegularButton from '../../atoms/buttons/regularButton/regularButton'
@@ -120,7 +122,7 @@ const Registration: FC = () => {
 							Зарегистрироваться
 						</RegularButton>
 						<p className='registration__link description-text'>
-							<a href='#'>У меня уже есть профиль</a>
+							<Link to='authorization'>У меня уже есть профиль</Link>
 						</p>
 					</div>
 				</form>

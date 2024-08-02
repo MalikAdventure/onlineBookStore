@@ -1,5 +1,7 @@
 import './header.scss'
 
+import { Link } from 'react-router-dom'
+
 import RegularButton from '../../atoms/buttons/regularButton/regularButton'
 import RoundButton from '../../atoms/buttons/roundButton/roundButton'
 import GlobalInput from '../../atoms/inputs/globalInput/globalInput'
@@ -25,7 +27,9 @@ const Header = () => {
 						<img src={dark} alt='dark' />
 					</RoundButton>
 					<RoundButton className='header__button'>
-						<img src={profile} alt='profile' />
+						<Link to='/authorization'>
+							<img src={profile} alt='profile' />
+						</Link>
 					</RoundButton>
 					<RoundButton className='header__button'>
 						<img src={cart} alt='cart' />
