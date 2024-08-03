@@ -14,18 +14,25 @@
 	}
 
 	&__title-item {
-		display: flex;
-		align-items: center;
+		width: 0;
 		margin-bottom: 10px;
 
-		> img {
-			margin-right: 10px;
+		> a {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			text-decoration: none;
+			color: var(--black);
+
+			> p {
+				white-space: nowrap;
+			}
 		}
 	}
 
 	&__line {
 		width: 90%;
 		margin: 60px auto;
-		border: 1px solid var(--black);
+		border: 2px solid var(--black);
 	}
 }

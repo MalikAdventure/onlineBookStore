@@ -22,16 +22,22 @@ const Footer = () => {
 						<h3 className='footer__title title-text'>Об авторе</h3>
 						<div className='footer__title-box'>
 							<div className='footer__title-item'>
-								<img src={github} alt='github' />
-								<p className='link-text'>GitHub</p>
+								<a href='https://github.com/MalikAdventure' target='_blank'>
+									<img src={github} alt='github' />
+									<p className='link-text'>GitHub</p>
+								</a>
 							</div>
 							<div className='footer__title-item'>
-								<img src={telegram} alt='telegram' />
-								<p className='link-text'>Телеграмм</p>
+								<a href='https://t.me/MalikAnton' target='_blank'>
+									<img src={telegram} alt='telegram' />
+									<p className='link-text'>Телеграмм</p>
+								</a>
 							</div>
 							<div className='footer__title-item'>
-								<img src={email} alt='e-mail' />
-								<p className='link-text'>Почта</p>
+								<a href='mailto:malikantonit@gmail.com' target='_blank'>
+									<img src={email} alt='e-mail' />
+									<p className='link-text'>Почта</p>
+								</a>
 							</div>
 						</div>
 					</div>
@@ -39,12 +45,16 @@ const Footer = () => {
 						<h3 className='footer__title title-text'>Полезные ссылки</h3>
 						<div className='footer__title-box'>
 							<div className='footer__title-item'>
-								<img src={google} alt='google' />
-								<p className='link-text'>Google Books APIs</p>
+								<a href='https://developers.google.com/books' target='_blank'>
+									<img src={google} alt='google' />
+									<p className='link-text'>Google Books APIs</p>
+								</a>
 							</div>
 							<div className='footer__title-item'>
-								<img src={atomic} alt='atomic' />
-								<p className='link-text'>Atomic Design</p>
+								<a href='https://habr.com/ru/articles/740416/' target='_blank'>
+									<img src={atomic} alt='atomic' />
+									<p className='link-text'>Atomic Design</p>
+								</a>
 							</div>
 						</div>
 					</div>

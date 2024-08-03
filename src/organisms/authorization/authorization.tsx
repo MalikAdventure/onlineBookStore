@@ -25,9 +25,7 @@ const Authorization: FC = () => {
 	return (
 		<section className='authorization section'>
 			<div className='authorization__container container'>
-				<h1 className='authorization__title title-text'>
-					Зарегистрировать профиль
-				</h1>
+				<h1 className='authorization__title title-text'>Войти в профиль</h1>
 				<form className='authorization__form' onSubmit={handleSubmit(onSubmit)}>
 					<div className='authorization__box'>
 						<div className='authorization__item'>
@@ -78,7 +76,7 @@ const Authorization: FC = () => {
 							Авторизоваться
 						</RegularButton>
 						<p className='authorization__link description-text'>
-							<Link to='registration'>У меня нет профиля</Link>
+							<Link to='/registration'>У меня нет профиля</Link>
 						</p>
 					</div>
 				</form>

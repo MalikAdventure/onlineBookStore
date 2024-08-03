@@ -122,7 +122,7 @@ const Registration: FC = () => {
 							Зарегистрироваться
 						</RegularButton>
 						<p className='registration__link description-text'>
-							<Link to='authorization'>У меня уже есть профиль</Link>
+							<Link to='/authorization'>У меня уже есть профиль</Link>
 						</p>
 					</div>
 				</form>

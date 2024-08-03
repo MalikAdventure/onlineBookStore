@@ -1,0 +1,17 @@
+.not-found {
+	background-color: var(--blue);
+
+	&__title {
+		margin-bottom: 30px;
+	}
+
+	&__img {
+		margin-bottom: 30px;
+	}
+
+	&__link {
+		text-decoration: underline;
+		color: var(--white);
+		cursor: pointer;
+	}
+}

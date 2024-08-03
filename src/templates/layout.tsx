@@ -1,3 +1,5 @@
+import './layout.scss'
+
 import { Outlet } from 'react-router-dom'
 
 import Header from '../organisms/header/header'
@@ -9,7 +11,9 @@ const Layout = () => {
 		<>
 			<Header />
 			<Breadcrumbs />
-			<Outlet />
+			<div className='outlet'>
+				<Outlet />
+			</div>
 			<Footer />
 		</>
 	)

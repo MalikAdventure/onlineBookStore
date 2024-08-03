@@ -16,7 +16,9 @@ const Header = () => {
 	return (
 		<header className='header'>
 			<div className='header__container container'>
-				<img className='header__logo' src={logo} alt='logo' />
+				<Link to='/'>
+					<img className='header__logo' src={logo} alt='logo' />
+				</Link>
 				<RegularButton>Каталог</RegularButton>
 				<GlobalInput placeholder='Введите больше двух символов' />
 				<div className='header__buttons'>
@@ -26,11 +28,11 @@ const Header = () => {
 					<RoundButton className='header__button'>
 						<img src={dark} alt='dark' />
 					</RoundButton>
-					<RoundButton className='header__button'>
-						<Link to='/authorization'>
+					<Link to='/authorization'>
+						<RoundButton className='header__button'>
 							<img src={profile} alt='profile' />
-						</Link>
-					</RoundButton>
+						</RoundButton>
+					</Link>
 					<RoundButton className='header__button'>
 						<img src={cart} alt='cart' />
 					</RoundButton>

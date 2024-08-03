@@ -79,6 +79,10 @@ html {
 	border-bottom: 2px solid var(--black);
 	outline: none;
 
+	&:focus {
+		border-bottom: 2px solid var(--white);
+	}
+
 	&::placeholder {
 		color: var(--white);
 	}
