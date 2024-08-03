@@ -19,7 +19,9 @@ const Header = () => {
 				<Link to='/'>
 					<img className='header__logo' src={logo} alt='logo' />
 				</Link>
-				<RegularButton>Каталог</RegularButton>
+				<Link to='/catalog'>
+					<RegularButton>Каталог</RegularButton>
+				</Link>
 				<GlobalInput placeholder='Введите больше двух символов' />
 				<div className='header__buttons'>
 					<RoundButton className='header__button'>
