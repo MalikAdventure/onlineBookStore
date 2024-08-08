@@ -1,9 +1,9 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import postReducer from './reducers/postSlice'
+// import postReducer from './reducers/postSlice'
 import { api } from '../services/bookServices'
 
 const rootReducer = combineReducers({
-	postReducer,
+	// postReducer,
 	[api.reducerPath]: api.reducer,
 })
 
@@ -15,6 +15,6 @@ export const setupStore = () => {
 	})
 }
 
-export type RootState = ReturnType<typeof rootReducer>
-export type AppStore = ReturnType<typeof setupStore>
-export type AppDispatch = AppStore['dispatch']
+// export type RootState = ReturnType<typeof rootReducer>
+// export type AppStore = ReturnType<typeof setupStore>
+// export type AppDispatch = AppStore['dispatch']
