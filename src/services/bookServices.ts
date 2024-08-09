@@ -1,15 +1,15 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-import { IPost } from '../models/IPost'
+import { IBook } from '../models/IBook'
 
 export const api = createApi({
-	reducerPath: 'postApi',
+	reducerPath: 'bookApi',
 	baseQuery: fetchBaseQuery({
 		baseUrl: 'https://jsonplaceholder.typicode.com',
 	}),
 	endpoints: (builder) => ({
-		getAllPosts: builder.query<IPost[], number>({
-			query: (limit: number = 5) => ({
+		getAllBooks: builder.query<IBook[], number>({
+			query: (limit: number = 6) => ({
 				url: '/posts',
 				params: { _limit: limit },
 			}),

@@ -2,27 +2,25 @@ import './bookCardsItem.scss'
 
 import { FC } from 'react'
 
-import { IPost } from '../../models/IPost'
+import { IBook } from '../../models/IBook'
 
 import ImportantButton from '../../atoms/buttons/importantButton/importantButton'
 import RoundButton from '../../atoms/buttons/roundButton/roundButton'
 
-import book from '../../assets/imgs/book.png'
+import bookImg from '../../assets/imgs/book.png'
 import bookmark from '../../assets/icons/bookmark.png'
 
 interface IBookCardsItem {
-	post: IPost
+	book: IBook
 }
 
-const BookCardsItem: FC<IBookCardsItem> = ({ post }) => {
+const BookCardsItem: FC<IBookCardsItem> = ({ book }) => {
 	return (
 		<div className='book-card-item'>
-			<img src={book} alt='книга' />
+			<img src={bookImg} alt='книга' />
 			<div className='book-card-item__info'>
 				<h2 className='book-card-item__title title-text'>
-					{/* Название книги которая здесь показана */}
-					{post.id}
-					{post.title}
+					{`${book.id} ${book.title.slice(0, 40)}...`}
 				</h2>
 				<p className='book-card-item__price link-text'>20 000 000 рублей</p>
 			</div>

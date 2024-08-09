@@ -1,6 +1,8 @@
 import classes from './globalInput.module.scss'
 
-const GlobalInput = ({ placeholder, ...props }) => {
+import { FC } from 'react'
+
+const GlobalInput: FC = ({ placeholder, ...props }) => {
 	return (
 		<input
 			type='text'
