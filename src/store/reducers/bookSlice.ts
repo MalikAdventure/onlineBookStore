@@ -7,8 +7,8 @@ export interface BookState {
 }
 
 const initialState: BookState = {
-	totalPages: 0,
-	page: 0,
+	totalPages: 6,
+	page: 1,
 	count: 0,
 }
 
@@ -22,8 +22,22 @@ export const bookSlice = createSlice({
 		increment(state, action: PayloadAction<number>) {
 			state.count += action.payload
 		},
+		nextPage(state, action: PayloadAction<number>) {
+			if (state.page < state.totalPages) {
+				state.page += action.payload
+			}
+		},
+		previousPage(state, action: PayloadAction<number>) {
+			if (state.page > 1) {
+				state.page -= action.payload
+			}
+		},
+		setTotalPages: (state, action: PayloadAction<number>) => {
+			state.totalPages = action.payload
+		},
 	},
 })
 
-export const { increment, changePage } = bookSlice.actions
+export const { previousPage, nextPage, setTotalPages, increment, changePage } =
+	bookSlice.actions
 export default bookSlice.reducer
