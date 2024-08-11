@@ -15,8 +15,8 @@ const ButtonsPagination = ({ totalPages, page, changePage, ...props }) => {
 					onClick={() => changePage(i)}
 					className={
 						page === i
-							? 'buttons-pagination buttons-pagination_active'
-							: 'buttons-pagination'
+							? 'buttons-pagination__button buttons-pagination__button_active'
+							: 'buttons-pagination__button'
 					}>
 					{i}
 				</ImportantButton>

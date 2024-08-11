@@ -1,25 +1,37 @@
 import './bookCardsList.scss'
 
+import axios from 'axios'
+
 import { api } from '../../services/bookServices'
 
 import { useAppSelector, useAppDispatch } from '../../hooks/redux'
 
 import BookCardsItem from './bookCardsItem'
 import Spinner from '../../atoms/loaders/spinner/spinner'
-// import ButtonsPagination from '../../molecules/buttonsPagination/buttonsPagination'
+import ButtonsPagination from '../../molecules/buttonsPagination/buttonsPagination'
 
-import {
-	previousPage,
-	nextPage,
-	increment,
-} from '../../store/reducers/bookSlice'
+import { getPageCount } from '../../utils/pagePagination/pagePagination'
+
+import { setTotalPages, changePage } from '../../store/reducers/bookSlice'
 
 const BookCardsList = () => {
 	const dispatch = useAppDispatch()
-	const { page, count } = useAppSelector((state) => state.bookReducer)
-	console.log('page', page)
+	const { page, totalPages } = useAppSelector((state) => state.bookReducer)
 
 	const limit = 24
+
+	axios
+		.head('https://jsonplaceholder.typicode.com/posts', {
+			params: { _limit: limit },
+		})
+		.then((response) => {
+			const totalCount = response.headers['x-total-count']
+			const totalPages = getPageCount(totalCount, limit)
+			if (books) {
+				dispatch(setTotalPages(totalPages))
+			}
+		})
+
 	const {
 		data: books,
 		isLoading,
@@ -35,17 +47,11 @@ const BookCardsList = () => {
 					{books &&
 						books.map((book) => <BookCardsItem key={book.id} book={book} />)}
 				</div>
-				{/* <ButtonsPagination
+				<ButtonsPagination
 					totalPages={totalPages}
 					page={page}
-					changePage={(pageNum) => dispatch(changePage(pageNum))}
-				/> */}
-				{/* <button onClick={() => setPage(page - 1)}>Previous</button>
-				<button onClick={() => setPage(page + 1)}>Next</button> */}
-				<button onClick={() => dispatch(previousPage(1))}>Previous</button>
-				<button onClick={() => dispatch(nextPage(1))}>Next</button>
-				{count}
-				<button onClick={() => dispatch(increment(1))}>increment</button>
+					changePage={(page: number) => dispatch(changePage(page))}
+				/>
 			</div>
 		</section>
 	)
