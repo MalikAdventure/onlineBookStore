@@ -19,5 +19,11 @@ export const api = createApi({
 				params: { _limit: limit, _page: page },
 			}),
 		}),
+		getBookById: builder.query<IBook, number>({
+			query: (id) => ({
+				url: `/posts`,
+				params: { id },
+			}),
+		}),
 	}),
 })

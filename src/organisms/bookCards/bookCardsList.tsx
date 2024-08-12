@@ -8,7 +8,7 @@ import { useAppSelector, useAppDispatch } from '../../hooks/redux'
 
 import BookCardsItem from './bookCardsItem'
 import Spinner from '../../atoms/loaders/spinner/spinner'
-import ButtonsPagination from '../../molecules/buttonsPagination/buttonsPagination'
+import PaginationButtons from '../../molecules/paginationButtons/paginationButtons'
 
 import { getPageCount } from '../../utils/pagePagination/pagePagination'
 
@@ -35,19 +35,21 @@ const BookCardsList = () => {
 	const {
 		data: books,
 		isLoading,
+		isFetching,
 		error,
 	} = api.useGetAllBooksQuery({ limit, page })
 
 	return (
 		<section className='book-cards-list section'>
 			<div className='book-cards-list__container container'>
-				<div className='book-cards-list__box'>
+				<ul className='book-cards-list__box'>
 					{isLoading && <Spinner />}
 					{error && <h2>Ошибка: Не удалось получить посты</h2>}
 					{books &&
 						books.map((book) => <BookCardsItem key={book.id} book={book} />)}
-				</div>
-				<ButtonsPagination
+					{isFetching && !isLoading && <Spinner />}
+				</ul>
+				<PaginationButtons
 					totalPages={totalPages}
 					page={page}
 					changePage={(page: number) => dispatch(changePage(page))}

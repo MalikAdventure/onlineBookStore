@@ -1,0 +1,10 @@
+.bookButtons {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	&__button {
+		width: 100%;
+		margin-right: 20px;
+	}
+}

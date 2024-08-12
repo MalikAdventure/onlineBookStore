@@ -1,22 +1,22 @@
-import './buttonsPagination.scss'
+import './paginationButtons.scss'
 
 import ImportantButton from '../../atoms/buttons/importantButton/importantButton'
 
 import { getPageArray } from '../../utils/pagePagination/pagePagination'
 
-const ButtonsPagination = ({ totalPages, page, changePage, ...props }) => {
+const PaginationButtons = ({ totalPages, page, changePage, ...props }) => {
 	let pagesArray = getPageArray(totalPages)
 
 	return (
-		<div {...props} className='buttons-pagination'>
+		<div {...props} className='pagination-buttons'>
 			{pagesArray.map((i) => (
 				<ImportantButton
 					key={i}
 					onClick={() => changePage(i)}
 					className={
 						page === i
-							? 'buttons-pagination__button buttons-pagination__button_active'
-							: 'buttons-pagination__button'
+							? 'pagination-buttons__button pagination-buttons__button_active'
+							: 'pagination-buttons__button'
 					}>
 					{i}
 				</ImportantButton>
@@ -25,4 +25,4 @@ const ButtonsPagination = ({ totalPages, page, changePage, ...props }) => {
 	)
 }
 
-export default ButtonsPagination
+export default PaginationButtons

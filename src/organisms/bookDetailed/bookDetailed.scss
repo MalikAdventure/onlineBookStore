@@ -1,0 +1,36 @@
+.book-detailed {
+	&__box {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__item {
+		> img {
+			width: 100%;
+		}
+
+		&:nth-child(1) {
+			width: 15%;
+		}
+		&:nth-child(2) {
+			width: 50%;
+		}
+		&:nth-child(3) {
+			width: 30%;
+		}
+	}
+
+	&__title {
+		margin-bottom: 20px;
+	}
+
+	&__info {
+		padding: 30px;
+		border: 3px solid var(--blue);
+		border-radius: 20px;
+	}
+
+	&__info-text {
+		margin-bottom: 20px;
+	}
+}
