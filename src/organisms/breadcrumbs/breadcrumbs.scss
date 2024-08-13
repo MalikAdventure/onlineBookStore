@@ -1,4 +1,34 @@
 .breadcrumbs {
 	background-color: var(--white);
 	height: 50px;
+	display: flex;
+	align-items: center;
+
+	&__container {
+		display: flex;
+	}
+
+	&__crumb {
+		list-style-type: none;
+		margin-left: 10px;
+		display: flex;
+
+		&:after {
+			content: '>';
+			margin-left: 10px;
+		}
+
+		&:last-child:after {
+			display: none;
+		}
+		> a {
+			text-decoration: none;
+			color: var(--blue);
+			display: flex;
+			align-items: center;
+			> img {
+				margin-right: 10px;
+			}
+		}
+	}
 }

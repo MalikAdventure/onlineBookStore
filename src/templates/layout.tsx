@@ -11,9 +11,9 @@ const Layout = () => {
 		<>
 			<Header />
 			<Breadcrumbs />
-			<div className='outlet'>
+			<main className='outlet'>
 				<Outlet />
-			</div>
+			</main>
 			<Footer />
 		</>
 	)
