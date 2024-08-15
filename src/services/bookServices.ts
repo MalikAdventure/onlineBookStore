@@ -1,10 +1,17 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 import { IBook } from '../models/IBook'
+import { IComments } from '../models/IComments'
 
 export interface IGetAllBooks {
 	limit: number
 	page: number
+}
+
+export interface IGetCommentsBookById {
+	limit: number
+	page: number
+	id: number
 }
 
 export const api = createApi({
@@ -25,5 +32,13 @@ export const api = createApi({
 				params: { id },
 			}),
 		}),
+		getCommentsBookById: builder.query<IComments, IGetCommentsBookById>({
+			query: ({ limit = 2, page = 1, id }) => ({
+				url: `/posts/${id}/comments`,
+				params: { _limit: limit, _page: page },
+			}),
+		}),
 	}),
 })
+
+// https://jsonplaceholder.typicode.com/posts/1/comments?_limit=2&_page=2

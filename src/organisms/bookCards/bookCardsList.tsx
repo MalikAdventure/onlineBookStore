@@ -12,11 +12,11 @@ import PaginationButtons from '../../molecules/paginationButtons/paginationButto
 
 import { getPageCount } from '../../utils/pagePagination/pagePagination'
 
-import { setTotalPages, changePage } from '../../store/reducers/bookSlice'
+import { setTotalPages, changePage } from '../../store/reducers/allBooksSlice'
 
 const BookCardsList = () => {
 	const dispatch = useAppDispatch()
-	const { page, totalPages } = useAppSelector((state) => state.bookReducer)
+	const { page, totalPages } = useAppSelector((state) => state.allBooksReducer)
 
 	const limit = 24
 
@@ -44,7 +44,7 @@ const BookCardsList = () => {
 			<div className='book-cards-list__container container'>
 				<ul className='book-cards-list__box'>
 					{isLoading && <Spinner />}
-					{error && <h2>Ошибка: Не удалось получить посты</h2>}
+					{error && <h2>Ошибка: Не удалось получить книги</h2>}
 					{books &&
 						books.map((book) => <BookCardsItem key={book.id} book={book} />)}
 					{isFetching && !isLoading && <Spinner />}

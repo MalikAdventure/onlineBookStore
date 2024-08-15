@@ -1,8 +1,10 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
+import allBooksReducer from './reducers/allBooksSlice'
 import bookReducer from './reducers/bookSlice'
 import { api } from '../services/bookServices'
 
 const rootReducer = combineReducers({
+	allBooksReducer,
 	bookReducer,
 	[api.reducerPath]: api.reducer,
 })
