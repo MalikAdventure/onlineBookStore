@@ -82,8 +82,6 @@ const BookDetailed = () => {
 		<section className='book-detailed section'>
 			<div className='book-detailed__container container'>
 				<div className='book-detailed__book'>
-					{isLoading && <Spinner />}
-					{error && <h2>Ошибка: Не удалось получить книгу</h2>}
 					{books &&
 						books.map((book: IBook) => (
 							<div key={book.id} className='book-detailed__book-box'>
@@ -109,11 +107,18 @@ const BookDetailed = () => {
 								</div>
 							</div>
 						))}
+					{books?.length === 0 && (
+						<h2 className='book-detailed__text link-text'>Книга не найдена</h2>
+					)}
+					{error && (
+						<h2 className='book-detailed__text error-text'>
+							Ошибка: Не удалось получить книгу
+						</h2>
+					)}
+					{isLoading && <Spinner />}
 				</div>
 				<div className='book-detailed__comment'>
 					<h2 className='book-detailed__comment-topic topic-text'>Отзывы</h2>
-					{isLoadingComments && <Spinner />}
-					{errorComments && <h2>Ошибка: Не удалось получить комментарии</h2>}
 					{allComments &&
 						allComments.map((comment: IComments) => (
 							<div key={comment.id} className='book-detailed__comment-box'>
@@ -122,8 +127,19 @@ const BookDetailed = () => {
 								<p className='book-detailed__comment-text'>{comment.body}</p>
 							</div>
 						))}
+					{allComments?.length === 0 && !isLoadingComments && (
+						<h2 className='book-detailed__text link-text'>
+							Комментарии не найдены
+						</h2>
+					)}
+					{isLoadingComments && <Spinner />}
 					{isFetchingComments && !isLoadingComments && <Spinner />}
-					{page < totalPages && (
+					{errorComments && (
+						<h2 className='book-detailed__text error-text'>
+							Ошибка: Не удалось получить комментарии
+						</h2>
+					)}
+					{page < totalPages && !isFetchingComments && (
 						<ImportantButton
 							onClick={() => dispatch(loadMore(1))}
 							className='book-detailed__comment-button'>

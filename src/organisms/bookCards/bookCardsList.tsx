@@ -43,11 +43,20 @@ const BookCardsList = () => {
 		<section className='book-cards-list section'>
 			<div className='book-cards-list__container container'>
 				<ul className='book-cards-list__box'>
-					{isLoading && <Spinner />}
-					{error && <h2>Ошибка: Не удалось получить книги</h2>}
 					{books &&
 						books.map((book) => <BookCardsItem key={book.id} book={book} />)}
+					{books?.length === 0 && (
+						<h2 className='book-cards-list__text link-text'>
+							Книги не найдены
+						</h2>
+					)}
+					{isLoading && <Spinner />}
 					{isFetching && !isLoading && <Spinner />}
+					{error && (
+						<h2 className='book-cards-list__text error-text'>
+							Ошибка: Не удалось получить книги
+						</h2>
+					)}
 				</ul>
 				<PaginationButtons
 					totalPages={totalPages}
