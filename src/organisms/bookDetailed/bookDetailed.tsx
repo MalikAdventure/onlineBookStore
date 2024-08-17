@@ -122,9 +122,9 @@ const BookDetailed = () => {
 					{allComments &&
 						allComments.map((comment: IComments) => (
 							<div key={comment.id} className='book-detailed__comment-box'>
-								<h3 className='book-detailed__comment-text'>{`${comment.id} ${comment.email}`}</h3>
-								<h4 className='book-detailed__comment-text'>{comment.name}</h4>
-								<p className='book-detailed__comment-text'>{comment.body}</p>
+								<h3 className='book-detailed__comment-text title-text'>{`${comment.id} ${comment.email}`}</h3>
+								<h4 className='book-detailed__comment-text title-text'>{comment.name}</h4>
+								<p className='book-detailed__comment-text description-text'>{comment.body}</p>
 							</div>
 						))}
 					{allComments?.length === 0 && !isLoadingComments && (

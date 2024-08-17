@@ -12,7 +12,12 @@ import dark from '../../assets/icons/dark.png'
 import profile from '../../assets/icons/profile.png'
 import cart from '../../assets/icons/cart.png'
 
+import { useAppDispatch } from '../../hooks/redux'
+import { toggleTheme } from '../../store/reducers/themeSlice'
+
 const Header = () => {
+	const dispatch = useAppDispatch()
+
 	return (
 		<header className='header'>
 			<div className='header__container container'>
@@ -27,11 +32,13 @@ const Header = () => {
 					<RoundButton className='header__button'>
 						<img src={english} alt='english' />
 					</RoundButton>
-					<RoundButton className='header__button'>
-						<img src={dark} alt='dark' />
+					<RoundButton
+						className='header__button'
+						onClick={() => dispatch(toggleTheme())}>
+						<img src={dark} alt='theme' />
 					</RoundButton>
-					<Link to='/authorization'>
-						<RoundButton className='header__button'>
+					<Link to='/authorization' className='header__button'>
+						<RoundButton>
 							<img src={profile} alt='profile' />
 						</RoundButton>
 					</Link>

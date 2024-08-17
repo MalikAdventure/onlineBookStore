@@ -1,11 +1,13 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import allBooksReducer from './reducers/allBooksSlice'
 import bookReducer from './reducers/bookSlice'
+import themeReducer from './reducers/themeSlice'
 import { api } from '../services/bookServices'
 
 const rootReducer = combineReducers({
 	allBooksReducer,
 	bookReducer,
+	themeReducer,
 	[api.reducerPath]: api.reducer,
 })
 

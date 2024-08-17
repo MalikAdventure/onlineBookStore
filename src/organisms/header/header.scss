@@ -17,6 +17,9 @@
 	}
 
 	&__button {
-		margin-left: 60px;
+		margin-right: 60px;
+		&:last-child {
+			margin-right: 0;
+		}
 	}
 }
