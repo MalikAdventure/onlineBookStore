@@ -9,14 +9,17 @@ import GlobalInput from '../../atoms/inputs/globalInput/globalInput'
 import logo from '../../assets/icons/logo.png'
 import english from '../../assets/icons/english.png'
 import dark from '../../assets/icons/dark.png'
+import light from '../../assets/icons/light.png'
 import profile from '../../assets/icons/profile.png'
 import cart from '../../assets/icons/cart.png'
 
-import { useAppDispatch } from '../../hooks/redux'
+import { useAppDispatch, useAppSelector } from '../../hooks/redux'
 import { toggleTheme } from '../../store/reducers/themeSlice'
 
 const Header = () => {
 	const dispatch = useAppDispatch()
+
+	const { theme } = useAppSelector((state) => state.themeReducer)
 
 	return (
 		<header className='header'>
@@ -35,7 +38,7 @@ const Header = () => {
 					<RoundButton
 						className='header__button'
 						onClick={() => dispatch(toggleTheme())}>
-						<img src={dark} alt='theme' />
+						<img src={theme === 'dark' ? light : dark} alt='theme' />
 					</RoundButton>
 					<Link to='/authorization' className='header__button'>
 						<RoundButton>

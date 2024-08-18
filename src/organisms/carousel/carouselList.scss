@@ -7,25 +7,9 @@
 		margin-bottom: 30px;
 	}
 
-	&__item {
-		margin-right: 15%;
-
-		&:last-child {
-			margin-right: 0;
-		}
-	}
-
-	&__item-img {
-		width: 400px;
-		height: 640px;
-	}
-
-	&__item-title {
-		margin-bottom: 30px;
-	}
-
-	&__item-text {
-		margin-bottom: 60px;
+	&__text {
+		text-align: center;
+		padding: 50px 0;
 	}
 }
 

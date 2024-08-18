@@ -1,0 +1,23 @@
+.carousel {
+	&__item {
+		&:nth-child(1) {
+			width: 30%;
+		}
+		&:nth-child(2) {
+			width: 60%;
+		}
+	}
+
+	&__item-img {
+		width: 350px;
+		height: 500px;
+	}
+
+	&__item-title {
+		margin-bottom: 30px;
+	}
+
+	&__item-text {
+		margin-bottom: 60px;
+	}
+}

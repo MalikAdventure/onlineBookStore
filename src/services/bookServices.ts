@@ -14,6 +14,11 @@ export interface IGetCommentsBookById {
 	id: number
 }
 
+export interface IGetRandomBooks {
+	limit: number
+	offset: number
+}
+
 export const api = createApi({
 	reducerPath: 'bookApi',
 	baseQuery: fetchBaseQuery({
@@ -36,6 +41,12 @@ export const api = createApi({
 			query: ({ limit = 2, page = 1, id }) => ({
 				url: `/posts/${id}/comments`,
 				params: { _limit: limit, _page: page },
+			}),
+		}),
+		getRandomBooks: builder.query<IBook[], IGetRandomBooks>({
+			query: ({ limit = 5 }) => ({
+				url: `/posts`,
+				params: { _limit: limit },
 			}),
 		}),
 	}),
