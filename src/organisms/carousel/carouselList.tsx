@@ -11,12 +11,13 @@ import Spinner from '../../atoms/loaders/spinner/spinner'
 
 const Carousel = () => {
 	const limit = 5
+	const start = 9
 
 	const {
 		data: books,
 		isLoading,
 		error,
-	} = api.useGetRandomBooksQuery({ limit })
+	} = api.useGetRandomBooksQuery({ limit, start })
 
 	const settings = {
 		dots: true,

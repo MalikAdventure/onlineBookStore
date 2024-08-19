@@ -16,7 +16,7 @@ export interface IGetCommentsBookById {
 
 export interface IGetRandomBooks {
 	limit: number
-	offset: number
+	start: number
 }
 
 export const api = createApi({
@@ -44,12 +44,10 @@ export const api = createApi({
 			}),
 		}),
 		getRandomBooks: builder.query<IBook[], IGetRandomBooks>({
-			query: ({ limit = 5 }) => ({
+			query: ({ limit = 5, start = 10 }) => ({
 				url: `/posts`,
-				params: { _limit: limit },
+				params: { _limit: limit, _start: start },
 			}),
 		}),
 	}),
 })
-
-// https://jsonplaceholder.typicode.com/posts/1/comments?_limit=2&_page=2
