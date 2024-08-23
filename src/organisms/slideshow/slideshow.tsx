@@ -9,7 +9,7 @@ import redux from '../../assets/imgs/redux.png'
 import typescript from '../../assets/imgs/typescript.png'
 import atomic from '../../assets/imgs/atomic.png'
 import vite from '../../assets/imgs/vite.png'
-import google from '../../assets/imgs/google.png'
+import json from '../../assets/imgs/JSON-Placeholder.png'
 import reacthookform from '../../assets/imgs/reacthookform.png'
 
 const Slideshow = () => {
@@ -46,7 +46,7 @@ const Slideshow = () => {
 					<img src={vite} alt='vite' />
 				</div>
 				<div className='slideshow__slide'>
-					<img src={google} alt='google' />
+					<img src={json} alt='json' />
 				</div>
 				<div className='slideshow__slide'>
 					<img src={reacthookform} alt='reacthookform' />

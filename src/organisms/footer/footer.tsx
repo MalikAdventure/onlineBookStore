@@ -3,7 +3,7 @@ import './footer.scss'
 import github from '../../assets/icons/github.png'
 import telegram from '../../assets/icons/telegram.png'
 import email from '../../assets/icons/e-mail.png'
-import google from '../../assets/icons/google.png'
+import json from '../../assets/icons/json.png'
 import atomic from '../../assets/icons/atomic.png'
 
 const Footer = () => {
@@ -45,9 +45,9 @@ const Footer = () => {
 						<h3 className='footer__title title-text'>Полезные ссылки</h3>
 						<div className='footer__title-box'>
 							<div className='footer__title-item'>
-								<a href='https://developers.google.com/books' target='_blank'>
-									<img src={google} alt='google' />
-									<p className='link-text'>Google Books APIs</p>
+								<a href='https://jsonplaceholder.typicode.com/' target='_blank'>
+									<img src={json} alt='json' />
+									<p className='link-text'>JSON Placeholder</p>
 								</a>
 							</div>
 							<div className='footer__title-item'>
