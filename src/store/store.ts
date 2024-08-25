@@ -3,6 +3,7 @@ import allBooksReducer from './reducers/allBooksSlice'
 import bookReducer from './reducers/bookSlice'
 import themeReducer from './reducers/themeSlice'
 import upReducer from './reducers/upSlice'
+import timeReducer from './reducers/timeSlice'
 import { api } from '../services/bookServices'
 
 const rootReducer = combineReducers({
@@ -10,6 +11,7 @@ const rootReducer = combineReducers({
 	bookReducer,
 	themeReducer,
 	upReducer,
+	timeReducer,
 	[api.reducerPath]: api.reducer,
 })
 

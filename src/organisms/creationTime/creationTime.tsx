@@ -1,14 +1,19 @@
 import './creationTime.scss'
 
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
+
+import { useAppSelector, useAppDispatch } from '../../hooks/redux'
+
+import { setNowTime } from '../../store/reducers/timeSlice'
 
 const CreationTime = () => {
-	const creationTime = new Date('2024-7-27')
-	const [nowTime, setNowTime] = useState(new Date())
+	const dispatch = useAppDispatch()
+	const creationTime = new Date('2024-7-27').getTime()
+	const nowTime = useAppSelector((state) => state.timeReducer.nowTime)
 
 	useEffect(() => {
 		const interval = setInterval(() => {
-			setNowTime(new Date())
+			dispatch(setNowTime(new Date().getTime()))
 		}, 1000)
 
 		return () => {
@@ -16,7 +21,7 @@ const CreationTime = () => {
 		}
 	}, [])
 
-	const time = nowTime.getTime() - creationTime.getTime()
+	const time = nowTime - creationTime
 
 	const days = Math.floor(time / (1000 * 60 * 60 * 24))
 	const hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
