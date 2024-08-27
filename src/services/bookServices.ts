@@ -49,5 +49,11 @@ export const api = createApi({
 				params: { _limit: limit, _start: start },
 			}),
 		}),
+		getSearchBookByTitle: builder.query<IBook[], string>({
+			query: (title) => ({
+				url: `/posts?title_like=${title}`,
+				params: { _title: title },
+			}),
+		}),
 	}),
 })
