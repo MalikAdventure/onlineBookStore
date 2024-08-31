@@ -5,6 +5,7 @@ import themeReducer from './reducers/themeSlice'
 import upReducer from './reducers/upSlice'
 import timeReducer from './reducers/timeSlice'
 import searchReducer from './reducers/searchSlice'
+import favoritesReducer from './reducers/favoritesSlice'
 import { api } from '../services/bookServices'
 
 const rootReducer = combineReducers({
@@ -14,6 +15,7 @@ const rootReducer = combineReducers({
 	upReducer,
 	timeReducer,
 	searchReducer,
+	favoritesReducer,
 	[api.reducerPath]: api.reducer,
 })
 

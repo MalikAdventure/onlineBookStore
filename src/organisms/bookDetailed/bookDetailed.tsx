@@ -104,7 +104,7 @@ const BookDetailed = () => {
 										<p className='book-detailed__book-info-text link-text'>
 											Есть в наличии
 										</p>
-										<BookButtons />
+										<BookButtons bookId={book.id} />
 									</div>
 								</div>
 							</div>

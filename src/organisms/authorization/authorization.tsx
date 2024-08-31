@@ -19,7 +19,7 @@ const Authorization: FC = () => {
 	const passwordError = formState.errors.password?.message
 
 	const onSubmit: SubmitHandler<IAuthorization> = (data) => {
-		console.log(data)
+		alert(`Ваша почта: ${data.email} и ваш пароль: ${data.password}`)
 	}
 
 	return (

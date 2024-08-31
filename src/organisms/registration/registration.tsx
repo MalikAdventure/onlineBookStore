@@ -23,7 +23,9 @@ const Registration: FC = () => {
 	const repeatPasswordError = formState.errors.repeatPassword?.message
 
 	const onSubmit: SubmitHandler<IRegistration> = (data) => {
-		console.log(data)
+		alert(
+			`Ваше имя: ${data.name}, ваша почта: ${data.email} и ваш пароль: ${data.password}`
+		)
 	}
 
 	return (
