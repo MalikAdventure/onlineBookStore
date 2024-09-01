@@ -52,6 +52,7 @@ const BookDetailed = () => {
 	const {
 		data: books,
 		isLoading,
+		isFetching,
 		error,
 	} = api.useGetBookByIdQuery(Number(params.id))
 
@@ -85,6 +86,8 @@ const BookDetailed = () => {
 			<div className='book-detailed__container container'>
 				<div className='book-detailed__book'>
 					{books &&
+						!isLoading &&
+						!isFetching &&
 						books.map((book: IBook) => (
 							<div key={book.id} className='book-detailed__book-box'>
 								<div className='book-detailed__book-item'>
@@ -118,6 +121,7 @@ const BookDetailed = () => {
 						</h2>
 					)}
 					{isLoading && <Spinner />}
+					{isFetching && !isLoading && <Spinner />}
 				</div>
 				<div className='book-detailed__comment'>
 					<h2 className='book-detailed__comment-topic topic-text'>Отзывы</h2>
@@ -133,11 +137,13 @@ const BookDetailed = () => {
 								</p>
 							</div>
 						))}
-					{allComments?.length === 0 && !isLoadingComments && (
-						<h2 className='book-detailed__text link-text'>
-							Комментарии не найдены
-						</h2>
-					)}
+					{allComments?.length === 0 &&
+						!isLoadingComments &&
+						!isFetchingComments && (
+							<h2 className='book-detailed__text link-text'>
+								Комментарии не найдены
+							</h2>
+						)}
 					{isLoadingComments && <Spinner />}
 					{isFetchingComments && !isLoadingComments && <Spinner />}
 					{errorComments && (

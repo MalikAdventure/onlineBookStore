@@ -14,7 +14,7 @@ import { deleteComments } from '../../store/reducers/bookSlice'
 import GlobalInput from '../../atoms/inputs/globalInput/globalInput'
 import Spinner from '../../atoms/loaders/spinner/spinner'
 
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 const GlobalSearch = () => {
 	const dispatch = useAppDispatch()
@@ -51,6 +51,7 @@ const GlobalSearch = () => {
 	}, [])
 
 	const navigate = useNavigate()
+	const { id: currentId } = useParams()
 
 	return (
 		<>
@@ -78,7 +79,9 @@ const GlobalSearch = () => {
 							<li
 								onClick={() => {
 									navigate(`/catalog/${book.id}`)
-									dispatch(deleteComments())
+									if (book.id !== Number(currentId)) {
+										dispatch(deleteComments())
+									}
 								}}
 								className='suggest__item suggest__item_link description-text'
 								key={book.id}>
