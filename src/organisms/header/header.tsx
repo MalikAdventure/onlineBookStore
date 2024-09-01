@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import RegularButton from '../../atoms/buttons/regularButton/regularButton'
 import RoundButton from '../../atoms/buttons/roundButton/roundButton'
 import GlobalSearch from '../../molecules/globalSearch/globalSearch'
+import Cart from '../../molecules/cart/cart'
 
 import logo from '../../assets/icons/logo.png'
 import english from '../../assets/icons/english.png'
@@ -15,11 +16,16 @@ import cart from '../../assets/icons/cart.png'
 
 import { useAppDispatch, useAppSelector } from '../../hooks/redux'
 import { toggleTheme } from '../../store/reducers/themeSlice'
+import { setCartShow } from '../../store/reducers/cartSlice'
 
 const Header = () => {
 	const dispatch = useAppDispatch()
 
 	const { theme } = useAppSelector((state) => state.themeReducer)
+
+	const handleCartClick = () => {
+		dispatch(setCartShow(true))
+	}
 
 	return (
 		<header className='header'>
@@ -33,23 +39,28 @@ const Header = () => {
 				<div className='header__input-box'>
 					<GlobalSearch />
 				</div>
-				<div className='header__buttons'>
-					<RoundButton className='header__button'>
-						<img src={english} alt='language' />
-					</RoundButton>
-					<RoundButton
-						className='header__button'
-						onClick={() => dispatch(toggleTheme())}>
-						<img src={theme === 'dark' ? light : dark} alt='theme' />
-					</RoundButton>
-					<Link to='/authorization' className='header__button'>
-						<RoundButton>
-							<img src={profile} alt='profile' />
+				<div className='header__box'>
+					<div className='header__buttons'>
+						<RoundButton className='header__button'>
+							<img src={english} alt='language' />
 						</RoundButton>
-					</Link>
-					<RoundButton className='header__button'>
-						<img src={cart} alt='cart' />
-					</RoundButton>
+						<RoundButton
+							className='header__button'
+							onClick={() => dispatch(toggleTheme())}>
+							<img src={theme === 'dark' ? light : dark} alt='theme' />
+						</RoundButton>
+						<Link to='/authorization' className='header__button'>
+							<RoundButton>
+								<img src={profile} alt='profile' />
+							</RoundButton>
+						</Link>
+						<RoundButton
+							onClick={handleCartClick}
+							className='header__button button-cart'>
+							<img src={cart} alt='cart' />
+						</RoundButton>
+					</div>
+					<Cart />
 				</div>
 			</div>
 		</header>
