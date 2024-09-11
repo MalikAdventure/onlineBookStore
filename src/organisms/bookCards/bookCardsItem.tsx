@@ -29,7 +29,7 @@ const BookCardsItem: FC<IBookCardsItem> = ({ book }) => {
 				</h2>
 			</div>
 			<p className='book-card-item__price link-text'>20 000 000 рублей</p>
-			<BookButtons book={book} />
+			<BookButtons bookId={book.id} />
 		</li>
 	)
 }

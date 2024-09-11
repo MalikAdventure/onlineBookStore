@@ -3,8 +3,6 @@ import './carouselItem.scss'
 import { FC } from 'react'
 import { IBook } from '../../models/IBook'
 
-import RegularButton from '../../atoms/buttons/regularButton/regularButton'
-
 import { useNavigate } from 'react-router-dom'
 
 import bookImg from '../../assets/imgs/book.png'
@@ -37,7 +35,6 @@ const CarouselItem: FC<IBookCarouselItem> = ({ book }) => {
 					</h3>
 					<p className='carousel__item-text description-text'>{book.body}</p>
 				</div>
-				<RegularButton>Купить</RegularButton>
 			</div>
 		</div>
 	)

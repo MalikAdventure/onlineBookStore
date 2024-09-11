@@ -11,10 +11,9 @@ import { setCartGoods } from '../../store/reducers/cartSlice'
 
 const BookButtons = (book) => {
 	const dispatch = useAppDispatch()
-	console.log('book:', book)
 
 	const { allFavorites } = useAppSelector((state) => state.favoritesReducer)
-	const isFavorite = allFavorites.includes(book.id)
+	const isFavorite = allFavorites.includes(book.bookId)
 
 	return (
 		<div className='book-buttons'>
@@ -23,7 +22,7 @@ const BookButtons = (book) => {
 				className='book-buttons__button'>
 				Купить
 			</ImportantButton>
-			<RoundButton onClick={() => dispatch(setFavorites([book.id]))}>
+			<RoundButton onClick={() => dispatch(setFavorites([book.bookId]))}>
 				<img
 					style={{
 						filter: isFavorite

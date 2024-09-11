@@ -29,7 +29,6 @@ export const cartSlice = createSlice({
 					quantity: action.payload.quantity,
 				})
 			}
-			console.log(state.cartGoods)
 		},
 		setCartShow: (state, action: PayloadAction<boolean>) => {
 			state.cartShow = action.payload
