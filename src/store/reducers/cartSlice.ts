@@ -22,7 +22,10 @@ export const cartSlice = createSlice({
 				(item) => item.id === action.payload.id
 			)
 			if (existingItem) {
-				existingItem.quantity += action.payload.quantity
+				existingItem.quantity = Math.max(
+					existingItem.quantity + action.payload.quantity,
+					0
+				)
 			} else {
 				state.cartGoods.push({
 					id: action.payload.id,

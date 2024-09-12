@@ -3,7 +3,7 @@ import './cart.scss'
 import { useEffect } from 'react'
 
 import { useAppSelector, useAppDispatch } from '../../hooks/redux'
-import { setCartShow } from '../../store/reducers/cartSlice'
+import { setCartShow, setCartGoods } from '../../store/reducers/cartSlice'
 
 import RoundButton from '../../atoms/buttons/roundButton/roundButton'
 
@@ -37,10 +37,36 @@ const Cart = () => {
 					<ul className='cart__goods description-text'>
 						{cartGoods &&
 							cartGoods.map((item) => (
-								<li key={item.id}>
-									Книга: {item.id} штук: {item.quantity}
-									<RoundButton>+</RoundButton>
-									<RoundButton>-</RoundButton>
+								<li key={item.id} className='cart__goods-item'>
+									<p className='cart__goods-text link-text'>
+										Книга: {item.id} штук: {item.quantity}
+									</p>
+									<RoundButton
+										style={{
+											backgroundColor: 'var(--blue)',
+											color: 'var(--white)',
+											width: '30px',
+											height: '30px',
+											borderRadius: '5px',
+										}}
+										onClick={() => {
+											dispatch(setCartGoods({ id: item.id, quantity: 1 }))
+										}}>
+										+
+									</RoundButton>
+									<RoundButton
+										style={{
+											backgroundColor: 'var(--blue)',
+											color: 'var(--white)',
+											width: '30px',
+											height: '30px',
+											borderRadius: '5px',
+										}}
+										onClick={() => {
+											dispatch(setCartGoods({ id: item.id, quantity: -1 }))
+										}}>
+										-
+									</RoundButton>
 								</li>
 							))}
 						{cartGoods.length === 0 && (
