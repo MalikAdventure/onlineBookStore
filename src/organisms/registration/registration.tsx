@@ -10,6 +10,8 @@ import RegularButton from '../../atoms/buttons/regularButton/regularButton'
 
 import { IRegistration } from './registration.interface'
 
+import { useTranslation } from 'react-i18next'
+
 const Registration: FC = () => {
 	const { register, handleSubmit, formState, watch } = useForm<IRegistration>({
 		mode: 'onChange',
@@ -24,15 +26,21 @@ const Registration: FC = () => {
 
 	const onSubmit: SubmitHandler<IRegistration> = (data) => {
 		alert(
-			`Ваше имя: ${data.name}, ваша почта: ${data.email} и ваш пароль: ${data.password}`
+			t('registration.alert.message', {
+				name: data.name,
+				email: data.email,
+				password: data.password,
+			})
 		)
 	}
+
+	const { t } = useTranslation()
 
 	return (
 		<section className='registration section'>
 			<div className='registration__container container'>
 				<h1 className='registration__title title-text'>
-					Зарегистрировать профиль
+					{t('registration.title')}
 				</h1>
 				<form className='registration__form' onSubmit={handleSubmit(onSubmit)}>
 					<div className='registration__box'>
@@ -42,16 +50,16 @@ const Registration: FC = () => {
 									nameError ? 'input-form_error' : ''
 								}`}
 								type='text'
-								placeholder='Ваше имя'
+								placeholder={t('registration.name')}
 								{...register('name', {
-									required: 'Это поле обязательно к заполнению',
+									required: `${t('global.input.required')}`,
 									minLength: {
 										value: 2,
-										message: 'Минимум 2 символа',
+										message: `${t('global.input.minLength')}`,
 									},
 									maxLength: {
 										value: 16,
-										message: 'Максимум 16 символов',
+										message: `${t('global.input.maxLength')}`,
 									},
 								})}
 							/>
@@ -65,12 +73,12 @@ const Registration: FC = () => {
 									emailError ? 'input-form_error' : ''
 								}`}
 								type='email'
-								placeholder='Ваша почта'
+								placeholder={t('registration.email')}
 								{...register('email', {
-									required: 'Это поле обязательно к заполнению',
+									required: `${t('global.input.required')}`,
 									pattern: {
 										value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-										message: 'Неправильная почта',
+										message: `${t('global.input.errorEmail')}`,
 									},
 								})}
 							/>
@@ -84,14 +92,13 @@ const Registration: FC = () => {
 									passwordError ? 'input-form_error' : ''
 								}`}
 								type='password'
-								placeholder='Ваш пароль'
+								placeholder={t('registration.password')}
 								{...register('password', {
-									required: 'Это поле обязательно к заполнению',
+									required: `${t('global.input.required')}`,
 									pattern: {
 										value:
 											/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]{8,}$/,
-										message:
-											'Пароль должен быть не меньше 8 символов и содержать как минимум одну заглавную букву, одну строчную букву, одну цифру и один специальный символ',
+										message: `${t('global.input.errorPassword')}`,
 									},
 								})}
 							/>
@@ -105,11 +112,12 @@ const Registration: FC = () => {
 									repeatPasswordError ? 'input-form_error' : ''
 								}`}
 								type='password'
-								placeholder='Повторите ваш пароль'
+								placeholder={t('registration.repeatPassword')}
 								{...register('repeatPassword', {
-									required: 'Это поле обязательно к заполнению',
+									required: `${t('global.input.required')}`,
 									validate: (value) =>
-										value === password || 'Пароли не совпадают',
+										value === password ||
+										`${t('global.input.errorMatchPassword')}`,
 								})}
 							/>
 							{repeatPasswordError && (
@@ -121,10 +129,10 @@ const Registration: FC = () => {
 					</div>
 					<div className='registration__buttons'>
 						<RegularButton type='submit' className='registration__button'>
-							Зарегистрироваться
+							{t('registration.singUp')}
 						</RegularButton>
 						<p className='registration__link description-text'>
-							<Link to='/authorization'>У меня уже есть профиль</Link>
+							<Link to='/authorization'>{t('registration.haveProfile')}</Link>
 						</p>
 					</div>
 				</form>

@@ -6,20 +6,25 @@ import email from '../../assets/icons/e-mail.png'
 import json from '../../assets/icons/json.png'
 import atomic from '../../assets/icons/atomic.png'
 
+import { useTranslation } from 'react-i18next'
+
 const Footer = () => {
+	const { t } = useTranslation()
+
 	return (
 		<footer className='footer section'>
 			<div className='footer__container container'>
 				<div className='footer__box'>
 					<div className='footer__item'>
-						<h3 className='footer__title title-text'>О проекте</h3>
-						<p className='link-text'>
-							Данный веб-сайт является тестовой разработкой Малика Антона с
-							использованием React + Redux + TS + Vite + Atomic Design
-						</p>
+						<h3 className='footer__title title-text'>
+							{t('footer.aboutProject')}
+						</h3>
+						<p className='link-text'>{t('footer.projectInfo')}</p>
 					</div>
 					<div className='footer__item'>
-						<h3 className='footer__title title-text'>Об авторе</h3>
+						<h3 className='footer__title title-text'>
+							{t('footer.aboutAuthor')}
+						</h3>
 						<div className='footer__title-box'>
 							<div className='footer__title-item'>
 								<a href='https://github.com/MalikAdventure' target='_blank'>
@@ -30,19 +35,21 @@ const Footer = () => {
 							<div className='footer__title-item'>
 								<a href='https://t.me/MalikAnton' target='_blank'>
 									<img src={telegram} alt='telegram' />
-									<p className='link-text'>Телеграмм</p>
+									<p className='link-text'>{t('footer.telegram')}</p>
 								</a>
 							</div>
 							<div className='footer__title-item'>
 								<a href='mailto:malikantonit@gmail.com' target='_blank'>
 									<img src={email} alt='e-mail' />
-									<p className='link-text'>Почта</p>
+									<p className='link-text'>{t('footer.email')}</p>
 								</a>
 							</div>
 						</div>
 					</div>
 					<div className='footer__item'>
-						<h3 className='footer__title title-text'>Полезные ссылки</h3>
+						<h3 className='footer__title title-text'>
+							{t('footer.usefulLinks')}
+						</h3>
 						<div className='footer__title-box'>
 							<div className='footer__title-item'>
 								<a href='https://jsonplaceholder.typicode.com/' target='_blank'>
@@ -60,9 +67,7 @@ const Footer = () => {
 					</div>
 				</div>
 				<hr className='footer__line' />
-				<p className='link-text'>
-					Все права защищены и все такое© 2024, ТУТ МОГЛА БЫТЬ ВАША РЕКЛАМА !!!
-				</p>
+				<p className='link-text'>{t('footer.copyright')}</p>
 			</div>
 		</footer>
 	)

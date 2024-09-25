@@ -29,6 +29,8 @@ import BookButtons from '../../molecules/bookButtons/bookButtons'
 
 import { useEffect } from 'react'
 
+import { useTranslation } from 'react-i18next'
+
 const BookDetailed = () => {
 	const params = useParams()
 
@@ -81,6 +83,8 @@ const BookDetailed = () => {
 
 	const { allComments } = useAppSelector((state) => state.bookReducer)
 
+	const { t } = useTranslation()
+
 	return (
 		<section className='book-detailed section'>
 			<div className='book-detailed__container container'>
@@ -102,10 +106,10 @@ const BookDetailed = () => {
 								<div className='book-detailed__book-item'>
 									<div className='book-detailed__book-info'>
 										<p className='book-detailed__book-info-text link-text'>
-											20 000 000 рублей
+											20 000 000 {t('global.rubles')}
 										</p>
 										<p className='book-detailed__book-info-text link-text'>
-											Есть в наличии
+											{t('bookDetailed.inStock')}
 										</p>
 										<BookButtons bookId={book.id} />
 									</div>
@@ -113,18 +117,22 @@ const BookDetailed = () => {
 							</div>
 						))}
 					{books?.length === 0 && (
-						<h2 className='book-detailed__text link-text'>Книга не найдена</h2>
+						<h2 className='book-detailed__text link-text'>
+							{t('global.notFound')}
+						</h2>
 					)}
 					{error && (
 						<h2 className='book-detailed__text error-text'>
-							Ошибка: Не удалось получить книгу
+							{t('global.error')}
 						</h2>
 					)}
 					{isLoading && <Spinner />}
 					{isFetching && !isLoading && <Spinner />}
 				</div>
 				<div className='book-detailed__comment'>
-					<h2 className='book-detailed__comment-topic topic-text'>Отзывы</h2>
+					<h2 className='book-detailed__comment-topic topic-text'>
+						{t('bookDetailed.title')}
+					</h2>
 					{allComments &&
 						allComments.map((comment: IComments) => (
 							<div key={comment.id} className='book-detailed__comment-box'>
@@ -141,21 +149,21 @@ const BookDetailed = () => {
 						!isLoadingComments &&
 						!isFetchingComments && (
 							<h2 className='book-detailed__text link-text'>
-								Комментарии не найдены
+								{t('global.notFound')}
 							</h2>
 						)}
 					{isLoadingComments && <Spinner />}
 					{isFetchingComments && !isLoadingComments && <Spinner />}
 					{errorComments && (
 						<h2 className='book-detailed__text error-text'>
-							Ошибка: Не удалось получить комментарии
+							{t('global.error')}
 						</h2>
 					)}
 					{page < totalPages && !isFetchingComments && (
 						<ImportantButton
 							onClick={() => dispatch(loadMore(1))}
 							className='book-detailed__comment-button'>
-							Посмотреть ещё отзывы
+							{t('bookDetailed.seeMore')}
 						</ImportantButton>
 					)}
 				</div>

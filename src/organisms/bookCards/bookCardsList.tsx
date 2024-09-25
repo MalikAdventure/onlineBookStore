@@ -14,6 +14,8 @@ import { getPageCount } from '../../utils/pagePagination/pagePagination'
 
 import { setTotalPages, changePage } from '../../store/reducers/allBooksSlice'
 
+import { useTranslation } from 'react-i18next'
+
 const BookCardsList = () => {
 	const dispatch = useAppDispatch()
 	const { page, totalPages } = useAppSelector((state) => state.allBooksReducer)
@@ -39,6 +41,8 @@ const BookCardsList = () => {
 		error,
 	} = api.useGetAllBooksQuery({ limit, page })
 
+	const { t } = useTranslation()
+
 	return (
 		<section className='book-cards-list section'>
 			<div className='book-cards-list__container container'>
@@ -47,14 +51,14 @@ const BookCardsList = () => {
 						books.map((book) => <BookCardsItem key={book.id} book={book} />)}
 					{books?.length === 0 && (
 						<h2 className='book-cards-list__text link-text'>
-							Книги не найдены
+							{t('global.notFound')}
 						</h2>
 					)}
 					{isLoading && <Spinner />}
 					{isFetching && !isLoading && <Spinner />}
 					{error && (
 						<h2 className='book-cards-list__text error-text'>
-							Ошибка: Не удалось получить книги
+							{t('global.error')}
 						</h2>
 					)}
 				</ul>

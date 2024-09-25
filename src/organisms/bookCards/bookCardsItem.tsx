@@ -9,6 +9,8 @@ import BookButtons from '../../molecules/bookButtons/bookButtons'
 
 import bookImg from '../../assets/imgs/book.png'
 
+import { useTranslation } from 'react-i18next'
+
 interface IBookCardsItem {
 	book: IBook
 }
@@ -20,6 +22,8 @@ const BookCardsItem: FC<IBookCardsItem> = ({ book }) => {
 		navigate(`/catalog/${book.id}`)
 	}
 
+	const { t } = useTranslation()
+
 	return (
 		<li className='book-card-item'>
 			<div onClick={toDetailedPage} className='book-card-item__info'>
@@ -28,7 +32,9 @@ const BookCardsItem: FC<IBookCardsItem> = ({ book }) => {
 					{`${book.id} ${book.title.slice(0, 40)}...`}
 				</h2>
 			</div>
-			<p className='book-card-item__price link-text'>20 000 000 рублей</p>
+			<p className='book-card-item__price link-text'>
+				20 000 000 {t('global.rubles')}
+			</p>
 			<BookButtons bookId={book.id} />
 		</li>
 	)

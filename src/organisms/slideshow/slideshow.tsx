@@ -20,7 +20,7 @@ const Slideshow = () => {
 		slidesToShow: 5,
 		autoplay: true,
 		speed: 5000,
-		autoplaySpeed: 10,
+		autoplaySpeed: 0,
 		cssEase: 'linear',
 		arrows: false,
 		touchMove: false,

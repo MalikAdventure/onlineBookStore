@@ -10,6 +10,8 @@ import RegularButton from '../../atoms/buttons/regularButton/regularButton'
 
 import { IAuthorization } from './authorization.interface'
 
+import { useTranslation } from 'react-i18next'
+
 const Authorization: FC = () => {
 	const { register, handleSubmit, formState } = useForm<IAuthorization>({
 		mode: 'onChange',
@@ -19,13 +21,22 @@ const Authorization: FC = () => {
 	const passwordError = formState.errors.password?.message
 
 	const onSubmit: SubmitHandler<IAuthorization> = (data) => {
-		alert(`Ваша почта: ${data.email} и ваш пароль: ${data.password}`)
+		alert(
+			t('authorization.alert.message', {
+				email: data.email,
+				password: data.password,
+			})
+		)
 	}
+
+	const { t } = useTranslation()
 
 	return (
 		<section className='authorization section'>
 			<div className='authorization__container container'>
-				<h1 className='authorization__title title-text'>Войти в профиль</h1>
+				<h1 className='authorization__title title-text'>
+					{t('authorization.title')}
+				</h1>
 				<form className='authorization__form' onSubmit={handleSubmit(onSubmit)}>
 					<div className='authorization__box'>
 						<div className='authorization__item'>
@@ -34,12 +45,12 @@ const Authorization: FC = () => {
 									emailError ? 'input-form_error' : ''
 								}`}
 								type='email'
-								placeholder='Ваша почта'
+								placeholder={t('authorization.email')}
 								{...register('email', {
-									required: 'Это поле обязательно к заполнению',
+									required: `${t('global.input.required')}`,
 									pattern: {
 										value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-										message: 'Неправильная почта',
+										message: `${t('global.input.errorEmail')}`,
 									},
 								})}
 							/>
@@ -53,14 +64,13 @@ const Authorization: FC = () => {
 									passwordError ? 'input-form_error' : ''
 								}`}
 								type='password'
-								placeholder='Ваш пароль'
+								placeholder={t('authorization.password')}
 								{...register('password', {
-									required: 'Это поле обязательно к заполнению',
+									required: `${t('global.input.required')}`,
 									pattern: {
 										value:
 											/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]{8,}$/,
-										message:
-											'Пароль должен быть не меньше 8 символов и содержать как минимум одну заглавную букву, одну строчную букву, одну цифру и один специальный символ',
+										message: `${t('global.input.errorPassword')}`,
 									},
 								})}
 							/>
@@ -73,10 +83,10 @@ const Authorization: FC = () => {
 					</div>
 					<div className='authorization__buttons'>
 						<RegularButton type='submit' className='authorization__button'>
-							Авторизоваться
+							{t('authorization.signIn')}
 						</RegularButton>
 						<p className='authorization__link description-text'>
-							<Link to='/registration'>У меня нет профиля</Link>
+							<Link to='/registration'>{t('authorization.noProfile')}</Link>
 						</p>
 					</div>
 				</form>

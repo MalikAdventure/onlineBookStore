@@ -6,6 +6,8 @@ import { useAppSelector, useAppDispatch } from '../../hooks/redux'
 
 import { setNowTime } from '../../store/reducers/timeSlice'
 
+import { useTranslation } from 'react-i18next'
+
 const CreationTime = () => {
 	const dispatch = useAppDispatch()
 	const creationTime = new Date('2024-7-27').getTime()
@@ -21,6 +23,8 @@ const CreationTime = () => {
 		}
 	}, [])
 
+	const { t } = useTranslation()
+
 	const time = nowTime - creationTime
 
 	const days = Math.floor(time / (1000 * 60 * 60 * 24))
@@ -32,10 +36,21 @@ const CreationTime = () => {
 		<section className='creation-time section'>
 			<div className='creation-time__container container'>
 				<h2 className='creation-time__title title-text'>
-					Сколько времени прошло с момента создания проекта
+					{t('creationTime.title')}
 				</h2>
 				<div className='creation-time__time description-text'>
-					{days} дней, {hours} часов, {minutes} минут, {seconds} секунд
+					<p>
+						{days} {t('creationTime.days')},
+					</p>
+					<p>
+						{hours} {t('creationTime.hours')},
+					</p>
+					<p>
+						{minutes} {t('creationTime.minutes')},
+					</p>
+					<p>
+						{seconds} {t('creationTime.seconds')}
+					</p>
 				</div>
 			</div>
 		</section>

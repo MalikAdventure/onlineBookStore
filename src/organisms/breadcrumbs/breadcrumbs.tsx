@@ -4,7 +4,11 @@ import { Link, useLocation } from 'react-router-dom'
 
 import home from '../../assets/icons/home.png'
 
+import { useTranslation } from 'react-i18next'
+
 const Breadcrumbs = () => {
+	const { t } = useTranslation()
+
 	const location = useLocation()
 	let currentLink = ''
 	const crumbs = location.pathname
@@ -12,10 +16,11 @@ const Breadcrumbs = () => {
 		.filter((crumb) => crumb !== '')
 		.map((crumb) => {
 			currentLink += `/${crumb}`
-
 			return (
 				<li className='breadcrumbs__crumb link-text' key={crumb}>
-					<Link to={currentLink}>{crumb}</Link>
+					<Link to={currentLink}>
+						{t(`breadcrumbs.${crumb}`, { defaultValue: crumb })}
+					</Link>
 				</li>
 			)
 		})
@@ -26,7 +31,7 @@ const Breadcrumbs = () => {
 				<li className='breadcrumbs__crumb link-text'>
 					<Link to='/'>
 						<img src={home} alt='главная' />
-						Главная
+						{t('breadcrumbs.main')}
 					</Link>
 				</li>
 				{crumbs}

@@ -16,6 +16,8 @@ import Spinner from '../../atoms/loaders/spinner/spinner'
 
 import { useNavigate, useParams } from 'react-router-dom'
 
+import { useTranslation } from 'react-i18next'
+
 const GlobalSearch = () => {
 	const dispatch = useAppDispatch()
 
@@ -53,11 +55,13 @@ const GlobalSearch = () => {
 	const navigate = useNavigate()
 	const { id: currentId } = useParams()
 
+	const { t } = useTranslation()
+
 	return (
 		<>
 			<GlobalInput
 				className={`header__input ${suggestShow ? 'header__input_active' : ''}`}
-				placeholder='Введите больше двух символов'
+				placeholder={t('globalSearch.placeholder')}
 				value={searchTitle}
 				onChange={(e) => {
 					if (e.target.value.length > 2) {
@@ -92,7 +96,9 @@ const GlobalSearch = () => {
 				)}
 			{suggestShow && books?.length === 0 && (
 				<ul className='header__suggest suggest__list'>
-					<li className='suggest__item description-text'>Книги не найдены</li>
+					<li className='suggest__item description-text'>
+						{t('global.notFound')}
+					</li>
 				</ul>
 			)}
 			{suggestShow && isLoading && (
@@ -112,7 +118,7 @@ const GlobalSearch = () => {
 			{suggestShow && error && (
 				<ul className='header__suggest suggest__list'>
 					<li className='suggest__item error-text'>
-						Ошибка: Не удалось получить книги
+						{t('global.error')}
 					</li>
 				</ul>
 			)}
