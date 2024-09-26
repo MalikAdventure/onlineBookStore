@@ -4,6 +4,7 @@ import '../assets/themes/themes.scss'
 import { Outlet } from 'react-router-dom'
 
 import Header from '../organisms/header/header'
+import HeaderMobile from '../organisms/header/headerMobile'
 import Breadcrumbs from '../organisms/breadcrumbs/breadcrumbs'
 import Footer from '../organisms/footer/footer'
 import UpButton from '../molecules/upButton/upButton'
@@ -16,6 +17,7 @@ const Layout = () => {
 	return (
 		<div className={currentTheme === 'light' ? 'light-theme' : 'dark-theme'}>
 			<Header />
+			<HeaderMobile />
 			<Breadcrumbs />
 			<main className='outlet'>
 				<Outlet />

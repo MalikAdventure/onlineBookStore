@@ -26,3 +26,33 @@
 		margin-bottom: 60px;
 	}
 }
+
+//* ПК
+@media (max-width: 1500px) {
+	.carousel {
+		&__item {
+			&:nth-child(1) {
+				margin-right: 60px;
+			}
+			&:nth-child(2) {
+				width: 50%;
+			}
+		}
+	}
+}
+
+//* ПК
+@media (max-width: 1300px) {
+	.carousel {
+		&__item {
+			&:nth-child(2) {
+				width: 40%;
+			}
+		}
+		&__item-img {
+			width: 300px;
+			height: 400px;
+			cursor: pointer;
+		}
+	}
+}

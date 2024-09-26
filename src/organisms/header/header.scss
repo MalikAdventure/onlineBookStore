@@ -41,3 +41,36 @@
 		}
 	}
 }
+
+//* ПК
+@media (max-width: 1800px) {
+	.header {
+		&__button {
+			margin-right: 40px;
+		}
+	}
+}
+
+//* ПК
+@media (max-width: 1500px) {
+	.header {
+		&__input-box {
+			width: 40%;
+		}
+		&__button {
+			margin-right: 30px;
+		}
+	}
+}
+
+//* ПК
+@media (max-width: 1300px) {
+	.header {
+		&__input-box {
+			width: 25%;
+		}
+		&__button {
+			margin-right: 20px;
+		}
+	}
+}

@@ -8,3 +8,15 @@
 		}
 	}
 }
+
+//* ПК
+@media (max-width: 1300px) {
+	.slideshow {
+		&__slide {
+			> img {
+				width: 200px;
+				height: 90px;
+			}
+		}
+	}
+}

@@ -96,3 +96,68 @@ html {
 .section {
 	padding: 60px 0;
 }
+
+// //* ПК
+// @media (max-width: 1920px) {
+// 	.container {
+// 		width: 1720px;
+// 	}
+// }
+
+//* ПК
+@media (max-width: 1800px) {
+	.container {
+		width: 1400px;
+	}
+}
+
+//* ПК
+@media (max-width: 1500px) {
+	.container {
+		width: 1200px;
+	}
+
+	.section {
+		padding: 30px 0;
+	}
+}
+
+//* ПК
+@media (max-width: 1300px) {
+	.container {
+		width: 900px;
+	}
+}
+
+//* Планшет
+@media (max-width: 1000px) {
+	.container {
+		width: 720px;
+	}
+
+	.section {
+		padding: 10px 0;
+	}
+}
+
+//* Планшет
+@media (max-width: 768px) {
+	.container {
+		width: 100%;
+		padding: 0 10px;
+	}
+}
+
+//* Телефон
+@media (max-width: 360px) {
+	// .container {
+	// 	width: 100%;
+	// }
+}
+
+//* Телефон
+@media (max-width: 320px) {
+	// .container {
+	// 	width: 100%;
+	// }
+}

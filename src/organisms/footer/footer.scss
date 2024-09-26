@@ -7,6 +7,10 @@
 	}
 	&__item {
 		width: 30%;
+
+		&:nth-child(2) {
+			width: 10%;
+		}
 	}
 
 	&__title {
@@ -34,5 +38,17 @@
 		width: 90%;
 		margin: 60px auto;
 		border: 2px solid var(--black);
+	}
+}
+
+//* ПК
+@media (max-width: 1500px) {
+	.footer {
+		&__item {
+
+			&:nth-child(2) {
+				width: 20%;
+			}
+		}
 	}
 }
