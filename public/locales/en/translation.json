@@ -72,5 +72,10 @@
 		"title": "Page not found",
 		"description": "No such page found, but you can",
 		"link": "go back"
+	},
+	"cart": {
+		"title": "Cart",
+		"empty": "Cart is empty. Add something",
+		"goods": "Book: {{id}} quantity: {{quantity}}"
 	}
 }

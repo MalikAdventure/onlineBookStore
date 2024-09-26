@@ -7,6 +7,8 @@ import { setCartShow, setCartGoods } from '../../store/reducers/cartSlice'
 
 import RoundButton from '../../atoms/buttons/roundButton/roundButton'
 
+import { useTranslation } from 'react-i18next'
+
 const Cart = () => {
 	const dispatch = useAppDispatch()
 
@@ -29,17 +31,22 @@ const Cart = () => {
 		}
 	}, [])
 
+	const { t } = useTranslation()
+
 	return (
 		<>
 			{cartShow && (
 				<div className='cart'>
-					<h2 className='cart__title title-text'>Корзина</h2>
+					<h2 className='cart__title title-text'>{t('cart.title')}</h2>
 					<ul className='cart__goods description-text'>
 						{cartGoods &&
 							cartGoods.map((item) => (
 								<li key={item.id} className='cart__goods-item'>
 									<p className='cart__goods-text link-text'>
-										Книга: {item.id} штук: {item.quantity}
+										{t('cart.goods', {
+											id: item.id,
+											quantity: item.quantity,
+										})}
 									</p>
 									<RoundButton
 										style={{
@@ -71,9 +78,7 @@ const Cart = () => {
 							))}
 						{cartGoods.length === 0 && (
 							<p className='description-text' style={{ textAlign: 'center' }}>
-								Корзина пуста
-								<br />
-								Добавьте что-нибудь
+								{t('cart.empty')}
 							</p>
 						)}
 					</ul>
