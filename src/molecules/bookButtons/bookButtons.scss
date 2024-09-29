@@ -8,3 +8,15 @@
 		margin-right: 20px;
 	}
 }
+
+//* Планшет
+@media (max-width: 768px) {
+	.book-buttons {
+		flex-direction: column;
+
+		&__button {
+			margin-bottom: 10px;
+			margin-right: 0;
+		}
+	}
+}

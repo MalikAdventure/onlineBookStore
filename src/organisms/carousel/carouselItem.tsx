@@ -33,7 +33,10 @@ const CarouselItem: FC<IBookCarouselItem> = ({ book }) => {
 					<h3 className='carousel__item-title title-text'>
 						{`${book.id} ${book.title}`}
 					</h3>
-					<p className='carousel__item-text description-text'>{book.body}</p>
+					<p className='carousel__item-text description-text'>{`${book.body.slice(
+						0,
+						150
+					)}...`}</p>
 				</div>
 			</div>
 		</div>

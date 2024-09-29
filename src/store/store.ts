@@ -8,6 +8,7 @@ import searchReducer from './reducers/searchSlice'
 import favoritesReducer from './reducers/favoritesSlice'
 import cartReducer from './reducers/cartSlice'
 import languageReducer from './reducers/languageSlice'
+import hamburgerReducer from './reducers/hamburgerSlice'
 import { api } from '../services/bookServices'
 
 const rootReducer = combineReducers({
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
 	favoritesReducer,
 	cartReducer,
 	languageReducer,
+	hamburgerReducer,
 	[api.reducerPath]: api.reducer,
 })
 
