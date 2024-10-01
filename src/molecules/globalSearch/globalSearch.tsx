@@ -39,7 +39,8 @@ const GlobalSearch = () => {
 	const handleOutsideClick = (event: MouseEvent) => {
 		if (
 			event.target instanceof HTMLElement &&
-			!event.target.closest('.header__input-box')
+			!event.target.closest('.header__input-box') &&
+			!event.target.closest('.menu__input-box')
 		) {
 			dispatch(setSuggestShow(false))
 		}
@@ -117,9 +118,7 @@ const GlobalSearch = () => {
 			)}
 			{suggestShow && error && (
 				<ul className='header__suggest suggest__list'>
-					<li className='suggest__item error-text'>
-						{t('global.error')}
-					</li>
+					<li className='suggest__item error-text'>{t('global.error')}</li>
 				</ul>
 			)}
 		</>

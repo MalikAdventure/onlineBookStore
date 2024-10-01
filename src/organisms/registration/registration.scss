@@ -37,3 +37,25 @@
 		}
 	}
 }
+
+//* Планшет
+@media (max-width: 1000px) {
+	.registration {
+		&__item {
+			flex-direction: column;
+		}
+	}
+}
+
+//* Планшет
+@media (max-width: 768px) {
+	.registration {
+		&__button {
+			margin-right: 0;
+			margin-bottom: 30px;
+		}
+		&__buttons {
+			flex-direction: column;
+		}
+	}
+}

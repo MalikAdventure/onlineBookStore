@@ -14,7 +14,6 @@ export const hamburgerSlice = createSlice({
 	reducers: {
 		setHamburger: (state) => {
 			state.hamburger = state.hamburger === false ? true : false
-			console.log(state.hamburger)
 		},
 	},
 })

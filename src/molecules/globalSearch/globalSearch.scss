@@ -18,3 +18,10 @@
 		}
 	}
 }
+
+//* Планшет
+@media (max-width: 1000px) {
+	.suggest__list {
+		position: static;
+	}
+}
