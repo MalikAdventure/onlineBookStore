@@ -1,0 +1,27 @@
+.suggest {
+	&__list {
+		position: absolute;
+		z-index: 2;
+		width: 100%;
+		max-height: 50vh;
+		overflow-y: auto;
+		list-style-type: none;
+		background-color: var(--white);
+	}
+
+	&__item {
+		padding: 10px;
+		border-bottom: 1px solid var(--gray);
+
+		&_link {
+			cursor: pointer;
+		}
+	}
+}
+
+//* Планшет
+@media (max-width: 1000px) {
+	.suggest__list {
+		position: static;
+	}
+}

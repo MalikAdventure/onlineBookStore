@@ -1,0 +1,76 @@
+.footer {
+	background-color: var(--gray);
+
+	&__box {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__item {
+		width: 30%;
+
+		&:nth-child(2) {
+			width: 10%;
+		}
+	}
+
+	&__title {
+		margin-bottom: 20px;
+	}
+
+	&__title-item {
+		width: 50px;
+		margin-bottom: 10px;
+
+		> a {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			text-decoration: none;
+			color: var(--black);
+
+			> p {
+				white-space: nowrap;
+			}
+		}
+	}
+
+	&__line {
+		width: 90%;
+		margin: 60px auto;
+		border: 2px solid var(--black);
+	}
+}
+
+//* ПК
+@media (max-width: 1500px) {
+	.footer {
+		&__item {
+			&:nth-child(2) {
+				width: 20%;
+			}
+		}
+	}
+}
+
+//* Планшет
+@media (max-width: 1000px) {
+	.footer {
+		&__box {
+			flex-direction: column;
+			align-items: center;
+		}
+		&__item {
+			width: 100%;
+			margin-bottom: 30px;
+			&:nth-child(2) {
+				width: 100%;
+			}
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		&__line {
+			margin: 30px auto;
+		}
+	}
+}

@@ -1,0 +1,98 @@
+.book-detailed {
+	background-color: var(--white);
+
+	&__book {
+		margin-bottom: 60px;
+	}
+
+	&__book-box {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__book-item {
+		> img {
+			width: 100%;
+		}
+
+		&:nth-child(1) {
+			width: 15%;
+		}
+		&:nth-child(2) {
+			width: 50%;
+		}
+		&:nth-child(3) {
+			width: 30%;
+		}
+	}
+
+	&__book-title {
+		margin-bottom: 20px;
+	}
+
+	&__book-info {
+		padding: 30px;
+		border: 3px solid var(--blue);
+		border-radius: 20px;
+	}
+
+	&__book-info-text {
+		margin-bottom: 20px;
+	}
+
+	&__text {
+		text-align: center;
+	}
+
+	&__comment-topic {
+		margin-bottom: 60px;
+	}
+
+	&__comment-box {
+		padding: 30px;
+		border: 3px solid var(--blue);
+		border-radius: 20px;
+		margin-bottom: 30px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__comment-text {
+		margin-bottom: 10px;
+		word-break: break-all;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__comment-button {
+		display: block;
+		margin: auto;
+	}
+}
+
+//* Планшет
+@media (max-width: 1000px) {
+	.book-detailed {
+		&__book-box {
+			flex-direction: column;
+		}
+		&__book-item {
+			margin: 0 auto;
+			margin-bottom: 30px;
+			&:nth-child(1) {
+				width: 300px;
+			}
+			&:nth-child(2) {
+				width: 100%;
+			}
+			&:nth-child(3) {
+				width: 100%;
+			}
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

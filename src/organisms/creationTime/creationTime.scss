@@ -1,0 +1,14 @@
+.creation-time {
+	background-color: var(--blue);
+
+	&__title {
+		margin-bottom: 30px;
+	}
+
+	&__time {
+		display: flex;
+		> p {
+			margin-right: 10px;
+		}
+	}
+}

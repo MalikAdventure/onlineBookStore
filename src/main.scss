@@ -1,15 +1,157 @@
+@font-face {
+	font-family: 'Roboto';
+	src: local('Roboto'), local('Roboto-Regular'),
+		url('./assets/fonts/Roboto/Roboto-Regular.woff2') format('woff2'),
+		url('./assets/fonts/Roboto/Roboto-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: local('Roboto Bold'), local('Roboto-Bold'),
+		url('./assets/fonts/Roboto/Roboto-Bold.woff2') format('woff2'),
+		url('./assets/fonts/Roboto/Roboto-Bold.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
 
-:root {
-	--white: #ffffff;
-	--blue: #2699fb;
+html {
+	font-size: 16px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	color: var(--black);
+}
+
+.title-text {
+	font-family: 'Roboto';
+	font-size: 2rem;
+	font-weight: 700;
+	color: var(--black);
+}
+
+.description-text {
+	font-family: 'Roboto';
+	font-size: 1.5rem;
+	font-weight: 400;
+	color: var(--black);
+}
+
+.link-text {
+	font-family: 'Roboto';
+	font-size: 2rem;
+	font-weight: 400;
+	color: var(--black);
+}
+
+.topic-text {
+	font-family: 'Roboto';
+	font-size: 2.5rem;
+	font-weight: 700;
+	color: var(--black);
+}
+
+.error-text {
+	font-family: 'Roboto';
+	font-size: 2rem;
+	font-weight: 400;
+	color: red;
+}
+
+.input-form {
+	width: 40%;
+	height: 40px;
+	background-color: rgba(0, 0, 0, 0);
+	border: none;
+	border-bottom: 2px solid var(--black);
+	outline: none;
+
+	&:focus {
+		border-bottom: 2px solid var(--white);
+	}
+
+	&::placeholder {
+		color: var(--white);
+	}
+
+	&_error {
+		border-bottom: 2px solid red;
+	}
 }
 
 .container {
 	width: 1720px;
-	margin: auto;
+	margin: 0 auto;
 }
+
+.section {
+	padding: 60px 0;
+}
+
+// //* ПК
+// @media (max-width: 1920px) {
+// 	.container {
+// 		width: 1720px;
+// 	}
+// }
+
+//* ПК
+@media (max-width: 1800px) {
+	.container {
+		width: 1400px;
+	}
+}
+
+//* ПК
+@media (max-width: 1500px) {
+	.container {
+		width: 1200px;
+	}
+
+	.section {
+		padding: 30px 0;
+	}
+}
+
+//* ПК
+@media (max-width: 1300px) {
+	.container {
+		width: 900px;
+	}
+}
+
+//* Планшет
+@media (max-width: 1000px) {
+	.container {
+		width: 720px;
+	}
+
+	.section {
+		padding: 10px 0;
+	}
+}
+
+//* Планшет
+@media (max-width: 768px) {
+	.container {
+		width: 100%;
+		padding: 0 10px;
+	}
+}
+
+// //* Телефон
+// @media (max-width: 360px) {
+// }
+
+// //* Телефон
+// @media (max-width: 320px) {
+// }

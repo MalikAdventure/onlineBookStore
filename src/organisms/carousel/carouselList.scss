@@ -1,0 +1,37 @@
+.carousel {
+	background-color: var(--blue);
+
+	&__box {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 30px;
+	}
+
+	&__text {
+		text-align: center;
+		padding: 50px 0;
+	}
+}
+
+.slick-prev {
+	left: 0 !important;
+	z-index: 1;
+}
+
+.slick-next {
+	right: 30px !important;
+	z-index: 1;
+}
+
+.slick-prev:before,
+.slick-next:before {
+	font-size: 50px !important;
+}
+
+.slick-dots li button:before {
+	font-size: 20px !important;
+}
+
+.slick-dots {
+	position: static !important;
+}

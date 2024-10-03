@@ -1,0 +1,61 @@
+.authorization {
+	background-color: var(--blue);
+
+	&__title {
+		margin-bottom: 30px;
+	}
+
+	&__box {
+		width: 100%;
+		margin-bottom: 60px;
+	}
+
+	&__item {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 20px;
+	}
+
+	&__text {
+		width: 55%;
+	}
+
+	&__buttons {
+		display: flex;
+		align-items: center;
+	}
+
+	&__button {
+		margin-right: 30px;
+	}
+
+	&__link {
+		> a {
+			color: var(--white);
+			text-decoration: none;
+		}
+	}
+}
+
+//* Планшет
+@media (max-width: 1000px) {
+	.authorization {
+		&__item {
+			flex-direction: column;
+		}
+	}
+}
+
+//* Планшет
+@media (max-width: 768px) {
+	.authorization {
+		&__button {
+			margin-right: 0;
+			margin-bottom: 30px;
+		}
+		&__buttons {
+			flex-direction: column;
+		}
+	}
+}

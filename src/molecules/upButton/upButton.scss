@@ -1,0 +1,14 @@
+.up-button {
+	position: fixed;
+	right: 60px;
+	bottom: 60px;
+	border: 1px solid var(--blue);
+}
+
+//* Планшет
+@media (max-width: 1000px) {
+	.up-button {
+		right: 20px;
+		bottom: 20px;
+	}
+}

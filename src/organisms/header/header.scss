@@ -12,11 +12,72 @@
 		cursor: pointer;
 	}
 
+	&__input-box {
+		position: relative;
+		width: 45%;
+	}
+
+	&__input {
+		&_active {
+			border-radius: 20px 20px 0 0 !important;
+		}
+	}
+
+	&__box {
+		position: relative;
+	}
+
 	&__buttons {
 		display: flex;
 	}
 
 	&__button {
-		margin-left: 60px;
+		margin-right: 60px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
+//* ПК
+@media (max-width: 1800px) {
+	.header {
+		&__button {
+			margin-right: 40px;
+		}
+	}
+}
+
+//* ПК
+@media (max-width: 1500px) {
+	.header {
+		&__input-box {
+			width: 40%;
+		}
+		&__button {
+			margin-right: 30px;
+		}
+	}
+}
+
+//* ПК
+@media (max-width: 1300px) {
+	.header {
+		&__input-box {
+			width: 25%;
+		}
+		&__button {
+			margin-right: 20px;
+		}
+	}
+}
+
+//* Планшет
+@media (max-width: 1000px) {
+	.header {
+		display: none;
 	}
 }

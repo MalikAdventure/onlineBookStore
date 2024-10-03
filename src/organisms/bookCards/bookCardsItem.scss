@@ -1,0 +1,74 @@
+.book-card-item {
+	width: 15%;
+	list-style-type: none;
+
+	&__info {
+		cursor: pointer;
+		> img {
+			width: 100%;
+			margin-bottom: 30px;
+		}
+	}
+
+	&__title {
+		margin-bottom: 20px;
+		min-height: 160px;
+	}
+
+	&__price {
+		margin-bottom: 20px;
+	}
+}
+
+//* ПК
+@media (max-width: 1800px) {
+	.book-card-item {
+		&__title {
+			min-height: 190px;
+		}
+	}
+}
+
+//* ПК
+@media (max-width: 1500px) {
+	.book-card-item {
+		&__title {
+			min-height: 230px;
+		}
+	}
+}
+
+//* ПК
+@media (max-width: 1300px) {
+	.book-card-item {
+		width: 20%;
+	}
+}
+
+//* Планшет
+@media (max-width: 1000px) {
+	.book-card-item {
+		width: 30%;
+		&__title {
+			min-height: 200px;
+		}
+	}
+}
+
+//* Планшет
+@media (max-width: 768px) {
+	.book-card-item {
+		width: 47%;
+		margin-bottom: 20px;
+	}
+}
+
+//* Телефон
+@media (max-width: 360px) {
+	.book-card-item {
+		width: 100%;
+		&__title {
+			min-height: 150px;
+		}
+	}
+}

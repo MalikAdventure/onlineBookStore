@@ -1,0 +1,68 @@
+.book-cards-list {
+	background-color: var(--white);
+
+	&__box {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 34px;
+		margin-bottom: 30px;
+	}
+
+	&__text {
+		margin: 0 auto;
+	}
+}
+
+//* ПК
+@media (max-width: 1800px) {
+	.book-cards-list {
+		&__box {
+			gap: 28px;
+		}
+	}
+}
+
+//* ПК
+@media (max-width: 1500px) {
+	.book-cards-list {
+		&__box {
+			gap: 24px;
+		}
+	}
+}
+
+//* ПК
+@media (max-width: 1300px) {
+	.book-cards-list {
+		&__box {
+			gap: 60px;
+		}
+	}
+}
+
+//* Планшет
+@media (max-width: 1000px) {
+	.book-cards-list {
+		&__box {
+			gap: 36px;
+		}
+	}
+}
+
+//* Планшет
+@media (max-width: 768px) {
+	.book-cards-list {
+		&__box {
+			gap: 5%;
+		}
+	}
+}
+
+//* Телефон
+@media (max-width: 360px) {
+	.book-cards-list {
+		&__box {
+			gap: 0;
+		}
+	}
+}

@@ -1,0 +1,58 @@
+.slideshow {
+	background-color: var(--white);
+
+	&__slide {
+		> img {
+			width: 230px;
+			height: 100px;
+		}
+	}
+}
+
+//* ПК
+@media (max-width: 1300px) {
+	.slideshow {
+		&__slide {
+			> img {
+				width: 200px;
+				height: 90px;
+			}
+		}
+	}
+}
+
+//* Планшет
+@media (max-width: 1000px) {
+	.slideshow {
+		&__slide {
+			> img {
+				width: 140px;
+				height: 80px;
+			}
+		}
+	}
+}
+
+//* Планшет
+@media (max-width: 768px) {
+	.slideshow {
+		&__slide {
+			> img {
+				width: 70px;
+				height: 35px;
+			}
+		}
+	}
+}
+
+//* Телефон
+@media (max-width: 360px) {
+	.slideshow {
+		&__slide {
+			> img {
+				width: 60px;
+				height: 30px;
+			}
+		}
+	}
+}

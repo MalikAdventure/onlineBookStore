@@ -1,0 +1,81 @@
+{
+	"global": {
+		"notFound": "Information not found",
+		"error": "An error occurred",
+		"buttonBuy": "Buy",
+		"rubles": "rubles",
+		"input": {
+			"required": "This field is required",
+			"errorEmail": "Incorrect mail",
+			"errorPassword": "The password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number and one special character",
+			"errorMatchPassword": "The passwords do not match",
+			"minLength": "Minimum 2 characters",
+			"maxLength": "Maximum 16 characters"
+		}
+	},
+	"header": {
+		"catalog": "Catalog"
+	},
+	"globalSearch": {
+		"placeholder": "Please enter more than two characters"
+	},
+	"breadcrumbs": {
+		"main": "Main",
+		"catalog": "Catalog",
+		"authorization": "Authorization",
+		"registration": "Registration"
+	},
+	"creationTime": {
+		"title": "How much time has passed since the project was created",
+		"days": "days",
+		"hours": "hours",
+		"minutes": "minutes",
+		"seconds": "seconds"
+	},
+	"footer": {
+		"aboutProject": "About the project",
+		"projectInfo": "This website is a test development by Malik Anton using React + Redux + TS + Vite + Atomic Design",
+		"aboutAuthor": "About the author",
+		"telegram": "Telegram",
+		"email": "E-mail",
+		"usefulLinks": "The useful links",
+		"copyright": "All rights reserved and all that© 2024, YOUR ADVERTISEMENT COULD BE HERE!!!"
+	},
+	"bookDetailed": {
+		"title": "Reviews",
+		"seeMore": "See more reviews",
+		"inStock": "In stock"
+	},
+	"authorization": {
+		"title": "Authorization",
+		"email": "Your email",
+		"password": "Your password",
+		"signIn": "Sign in",
+		"noProfile": "I don't have a profile",
+		"alert": {
+			"message": "Your email: {{email}} and your password: {{password}}"
+		}
+	},
+	"registration": {
+		"title": "Register a profile",
+		"name": "Your name",
+		"email": "Your email",
+		"password": "Your password",
+		"repeatPassword": "Repeat your password",
+		"singUp": "Sign up",
+		"haveProfile": "I already have a profile",
+		"alert": {
+			"message": "Your name: {{name}}, your email: {{email}} and your password: {{password}}"
+		}
+	},
+	"notFound": {
+		"title": "Page not found",
+		"description": "No such page found, but you can",
+		"link": "go back"
+	},
+	"cart": {
+		"title": "Cart",
+		"empty": "Cart is empty. Add something",
+		"goods": "Book: {{id}} quantity: {{quantity}}"
+	}
+}
