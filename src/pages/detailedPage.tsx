@@ -1,6 +1,8 @@
+import { FC } from 'react'
+
 import BookDetailed from '../organisms/bookDetailed/bookDetailed'
 
-const DetailedPage = () => {
+const DetailedPage: FC = () => {
 	return (
 		<>
 			<BookDetailed />

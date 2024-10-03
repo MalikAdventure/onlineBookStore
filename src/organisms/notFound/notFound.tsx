@@ -1,12 +1,14 @@
 import './notFound.scss'
 
+import { FC } from 'react'
+
 import { useNavigate } from 'react-router-dom'
 
 import notFoundImg from '../../assets/icons/404.png'
 
 import { useTranslation } from 'react-i18next'
 
-const NotFound = () => {
+const NotFound: FC = () => {
 	const navigate = useNavigate()
 
 	const { t } = useTranslation()

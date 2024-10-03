@@ -1,6 +1,8 @@
+import { FC } from 'react'
+
 import Authorization from '../organisms/authorization/authorization'
 
-const AuthorizationPage = () => {
+const AuthorizationPage: FC = () => {
 	return (
 		<>
 			<Authorization />

@@ -1,5 +1,7 @@
 import './footer.scss'
 
+import { FC } from 'react'
+
 import github from '../../assets/icons/github.png'
 import telegram from '../../assets/icons/telegram.png'
 import email from '../../assets/icons/e-mail.png'
@@ -8,7 +10,7 @@ import atomic from '../../assets/icons/atomic.png'
 
 import { useTranslation } from 'react-i18next'
 
-const Footer = () => {
+const Footer: FC = () => {
 	const { t } = useTranslation()
 
 	return (

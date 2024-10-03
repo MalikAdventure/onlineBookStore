@@ -1,5 +1,7 @@
 import './bookCardsList.scss'
 
+import { FC } from 'react'
+
 import axios from 'axios'
 
 import { api } from '../../services/bookServices'
@@ -16,7 +18,7 @@ import { setTotalPages, changePage } from '../../store/reducers/allBooksSlice'
 
 import { useTranslation } from 'react-i18next'
 
-const BookCardsList = () => {
+const BookCardsList: FC = () => {
 	const dispatch = useAppDispatch()
 	const { page, totalPages } = useAppSelector((state) => state.allBooksReducer)
 

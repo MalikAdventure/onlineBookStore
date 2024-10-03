@@ -4,6 +4,8 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
+import { FC } from 'react'
+
 import react from '../../assets/imgs/react.png'
 import redux from '../../assets/imgs/redux.png'
 import typescript from '../../assets/imgs/typescript.png'
@@ -12,7 +14,7 @@ import vite from '../../assets/imgs/vite.png'
 import json from '../../assets/imgs/JSON-Placeholder.png'
 import reacthookform from '../../assets/imgs/reacthookform.png'
 
-const Slideshow = () => {
+const Slideshow: FC = () => {
 	const settings = {
 		className: 'center',
 		infinite: true,

@@ -1,5 +1,7 @@
 import './headerMobile.scss'
 
+import { FC } from 'react'
+
 import RoundButton from '../../atoms/buttons/roundButton/roundButton'
 import RegularButton from '../../atoms/buttons/regularButton/regularButton'
 import GlobalSearch from '../../molecules/globalSearch/globalSearch'
@@ -23,7 +25,7 @@ import { Link } from 'react-router-dom'
 
 import { useTranslation } from 'react-i18next'
 
-const HeaderMobile = () => {
+const HeaderMobile: FC = () => {
 	const dispatch = useAppDispatch()
 
 	const { hamburger } = useAppSelector((state) => state.hamburgerReducer)

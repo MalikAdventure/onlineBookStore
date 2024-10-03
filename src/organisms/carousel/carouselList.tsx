@@ -4,12 +4,14 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
+import { FC } from 'react'
+
 import { api } from '../../services/bookServices'
 
 import CarouselItem from './carouselItem'
 import Spinner from '../../atoms/loaders/spinner/spinner'
 
-const Carousel = () => {
+const Carousel: FC = () => {
 	const limit = 5
 	const start = 9
 
@@ -24,8 +26,6 @@ const Carousel = () => {
 		infinite: false,
 		slidesToShow: 1,
 		slidesToScroll: 1,
-		// autoplay: true,
-		// pauseOnHover: true,
 		autoplay: false,
 		speed: 1000,
 		autoplaySpeed: 2000,

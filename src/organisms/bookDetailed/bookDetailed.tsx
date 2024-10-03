@@ -1,5 +1,9 @@
 import './bookDetailed.scss'
 
+import { FC } from 'react'
+import { IBook } from '../../models/IBook'
+import { IComments } from '../../models/IComments'
+
 import axios from 'axios'
 
 import { api } from '../../services/bookServices'
@@ -10,9 +14,6 @@ import { useParams } from 'react-router-dom'
 
 import Spinner from '../../atoms/loaders/spinner/spinner'
 import ImportantButton from '../../atoms/buttons/importantButton/importantButton'
-
-import { IBook } from '../../models/IBook'
-import { IComments } from '../../models/IComments'
 
 import { getPageCount } from '../../utils/pagePagination/pagePagination'
 
@@ -31,7 +32,7 @@ import { useEffect } from 'react'
 
 import { useTranslation } from 'react-i18next'
 
-const BookDetailed = () => {
+const BookDetailed: FC = () => {
 	const params = useParams()
 
 	const dispatch = useAppDispatch()

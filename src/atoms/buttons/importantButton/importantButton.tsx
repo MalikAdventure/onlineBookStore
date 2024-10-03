@@ -1,6 +1,16 @@
 import classes from './importantButton.module.scss'
 
-const ImportantButton = ({ children, ...props }) => {
+import { FC } from 'react'
+interface interfaceImportantButton {
+	children: React.ReactNode
+	className?: string
+	onClick?: () => void
+}
+
+const ImportantButton: FC<interfaceImportantButton> = ({
+	children,
+	...props
+}) => {
 	return (
 		<button
 			{...props}

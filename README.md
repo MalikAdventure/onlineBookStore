@@ -1,30 +1,36 @@
-# React + TypeScript + Vite
+# Pet-проект книжного онлайн магазина (Bookstore)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Описание
 
-Currently, two official plugins are available:
+Bookstore - это современное веб-приложение, которое имитирует книжный интернет магазин. В нем можно найти и посмотреть книгу в ассортименте.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Функции
 
-## Expanding the ESLint configuration
+Найти книгу по поиску
+Добавить книгу в избранное или в корзину
+Смена темы сайта
+Смена языка на сайте (только интерфейс)
+Авторизация и регистрация (только вывод для пользователя)
+Вернутся на вверх страницы (если страница большая)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Технологии
 
-- Configure the top-level `parserOptions` property like this:
+- React - фреймворк (с использованием typescript)
+- Redux Toolkit (redux и rtk query) - глобальный стейт менеджер
+- Vite - сборщик проекта
+- SWC - высокопроизводительный компилятор JavaScript и CSS
+- axios - HTTP-клиент для работы с запросами
+- React Hook Form - библиотека для работы с формами
+- React Slick - слайдер
+- Sass - предпроцессор css (использовался SCSS)
+- i18next - библиотека для смены языка
+- JSON Placeholder - онлайн-сервис, предоставляющий фиктивные данные
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Запуск проекта
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+1. Скачать репозиторий
+2. Открыть проект в редакторе кода
+3. Открыть терминал
+4. Написать `npm install` или `npm i`
+5. Написать `npm run dev`
+6. Перейти по ссылке в терминале

@@ -1,3 +1,5 @@
+import { FC } from 'react'
+
 import { Routes, Route } from 'react-router-dom'
 
 import Layout from '../templates/layout'
@@ -9,7 +11,7 @@ import AuthorizationPage from '../pages/authorizationPage'
 import RegistrationPage from '../pages/registrationPage'
 import NotFoundPage from '../pages/notFoundPage'
 
-const App = () => {
+const App: FC = () => {
 	return (
 		<>
 			<Routes>

@@ -1,6 +1,8 @@
+import { FC } from 'react'
+
 import NotFound from '../organisms/notFound/notFound'
 
-const NotFoundPage = () => {
+const NotFoundPage: FC = () => {
 	return (
 		<>
 			<NotFound />

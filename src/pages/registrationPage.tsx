@@ -1,6 +1,8 @@
+import { FC } from 'react'
+
 import Registration from '../organisms/registration/registration'
 
-const RegistrationPage = () => {
+const RegistrationPage: FC = () => {
 	return (
 		<>
 			<Registration />

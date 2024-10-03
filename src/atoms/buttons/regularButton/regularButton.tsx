@@ -1,6 +1,14 @@
 import classes from './regularButton.module.scss'
 
-const RegularButton = ({ children, ...props }) => {
+import { FC } from 'react'
+
+interface interfaceRegularButton {
+	children: React.ReactNode
+	className?: string
+	type?: 'button' | 'submit' | 'reset'
+}
+
+const RegularButton: FC<interfaceRegularButton> = ({ children, ...props }) => {
 	return (
 		<button
 			{...props}

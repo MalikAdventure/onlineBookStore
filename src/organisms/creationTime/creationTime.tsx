@@ -1,5 +1,7 @@
 import './creationTime.scss'
 
+import { FC } from 'react'
+
 import { useEffect } from 'react'
 
 import { useAppSelector, useAppDispatch } from '../../hooks/redux'
@@ -8,7 +10,7 @@ import { setNowTime } from '../../store/reducers/timeSlice'
 
 import { useTranslation } from 'react-i18next'
 
-const CreationTime = () => {
+const CreationTime: FC = () => {
 	const dispatch = useAppDispatch()
 	const creationTime = new Date('2024-7-27').getTime()
 	const nowTime = useAppSelector((state) => state.timeReducer.nowTime)

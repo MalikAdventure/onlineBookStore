@@ -1,5 +1,7 @@
 import './upButton.scss'
 
+import { FC } from 'react'
+
 import RoundButton from '../../atoms/buttons/roundButton/roundButton'
 
 import { useAppDispatch, useAppSelector } from '../../hooks/redux'
@@ -10,7 +12,7 @@ import { useEffect } from 'react'
 
 import up from '../../assets/icons/up.png'
 
-const UpButton = () => {
+const UpButton: FC = () => {
 	const dispatch = useAppDispatch()
 	const { showButton } = useAppSelector((state) => state.upReducer)
 

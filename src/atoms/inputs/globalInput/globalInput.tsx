@@ -1,8 +1,21 @@
 import classes from './globalInput.module.scss'
 
-import { FC } from 'react'
+import { FC, ChangeEvent, MouseEvent } from 'react'
 
-const GlobalInput: FC = ({ placeholder, onChange, onClick, ...props }) => {
+interface interfaceGlobalInput {
+	className?: string
+	placeholder?: string
+	onChange?: (event: ChangeEvent<HTMLInputElement>) => void
+	onClick?: (event: MouseEvent<HTMLInputElement>) => void
+	value?: string
+}
+
+const GlobalInput: FC<interfaceGlobalInput> = ({
+	placeholder,
+	onChange,
+	onClick,
+	...props
+}) => {
 	return (
 		<input
 			type='text'

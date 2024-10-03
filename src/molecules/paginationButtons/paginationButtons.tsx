@@ -1,11 +1,24 @@
 import './paginationButtons.scss'
 
+import { FC } from 'react'
+
 import ImportantButton from '../../atoms/buttons/importantButton/importantButton'
 
 import { getPageArray } from '../../utils/pagePagination/pagePagination'
 
-const PaginationButtons = ({ totalPages, page, changePage, ...props }) => {
-	let pagesArray = getPageArray(totalPages)
+interface interfacePaginationButtons {
+	totalPages: number
+	page: number
+	changePage: (page: number) => void
+}
+
+const PaginationButtons: FC<interfacePaginationButtons> = ({
+	totalPages,
+	page,
+	changePage,
+	...props
+}) => {
+	const pagesArray = getPageArray(totalPages)
 
 	return (
 		<div {...props} className='pagination-buttons'>

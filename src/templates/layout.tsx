@@ -1,6 +1,8 @@
 import './layout.scss'
 import '../assets/themes/themes.scss'
 
+import { FC } from 'react'
+
 import { Outlet } from 'react-router-dom'
 
 import Header from '../organisms/header/header'
@@ -11,7 +13,7 @@ import UpButton from '../molecules/upButton/upButton'
 
 import { useAppSelector } from '../hooks/redux'
 
-const Layout = () => {
+const Layout: FC = () => {
 	const currentTheme = useAppSelector((state) => state.themeReducer.theme)
 
 	return (

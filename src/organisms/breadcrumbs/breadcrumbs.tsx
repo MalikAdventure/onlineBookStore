@@ -1,12 +1,14 @@
 import './breadcrumbs.scss'
 
+import { FC } from 'react'
+
 import { Link, useLocation } from 'react-router-dom'
 
 import home from '../../assets/icons/home.png'
 
 import { useTranslation } from 'react-i18next'
 
-const Breadcrumbs = () => {
+const Breadcrumbs: FC = () => {
 	const { t } = useTranslation()
 
 	const location = useLocation()

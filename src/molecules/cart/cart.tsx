@@ -1,5 +1,7 @@
 import './cart.scss'
 
+import { FC } from 'react'
+
 import { useEffect } from 'react'
 
 import { useAppSelector, useAppDispatch } from '../../hooks/redux'
@@ -9,7 +11,7 @@ import RoundButton from '../../atoms/buttons/roundButton/roundButton'
 
 import { useTranslation } from 'react-i18next'
 
-const Cart = () => {
+const Cart: FC = () => {
 	const dispatch = useAppDispatch()
 
 	const { cartGoods, cartShow } = useAppSelector((state) => state.cartReducer)

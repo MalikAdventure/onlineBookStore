@@ -1,5 +1,7 @@
 import './header.scss'
 
+import { FC } from 'react'
+
 import { Link } from 'react-router-dom'
 
 import RegularButton from '../../atoms/buttons/regularButton/regularButton'
@@ -22,7 +24,7 @@ import { setCartShow } from '../../store/reducers/cartSlice'
 
 import { useTranslation } from 'react-i18next'
 
-const Header = () => {
+const Header: FC = () => {
 	const dispatch = useAppDispatch()
 
 	const { theme } = useAppSelector((state) => state.themeReducer)

@@ -1,5 +1,7 @@
 import './bookButtons.scss'
 
+import { FC } from 'react'
+
 import ImportantButton from '../../atoms/buttons/importantButton/importantButton'
 import RoundButton from '../../atoms/buttons/roundButton/roundButton'
 
@@ -11,7 +13,11 @@ import { setCartGoods } from '../../store/reducers/cartSlice'
 
 import { useTranslation } from 'react-i18next'
 
-const BookButtons = (book) => {
+interface interfaceBook {
+	bookId: number
+}
+
+const BookButtons: FC<interfaceBook> = (book) => {
 	const dispatch = useAppDispatch()
 
 	const { allFavorites } = useAppSelector((state) => state.favoritesReducer)
